@@ -61,7 +61,7 @@
     /**
      * echarts设备环境识别
      *
-     * @desc echarts基于Canvas，纯Javascript图表库，提供直观，生动，可交互，可个性化定制的数据统计图表��?
+     * @desc echarts基于Canvas，纯Javascript图表库，提供直观，生动，可交互，可个性化定制的数据统计图表��?
      * @author firede[firede@firede.us]
      * @desc thanks zepto.
      */
@@ -370,12 +370,12 @@
                     && !isPrimitive(sourceProp)
                     && !isPrimitive(targetProp)
                 ) {
-                    // 如果霢�要��归覆盖，就递归调用merge
+                    // 如果霢�要��归覆盖，就递归调用merge
                     merge(targetProp, sourceProp, overwrite);
                 }
                 else if (overwrite || !(key in target)) {
-                    // 否则只处理overwrite为true，或者在目标对象中没有此属��的情况
-                    // NOTE，在 target[key] 不存在的时��也是直接覆�?
+                    // 否则只处理overwrite为true，或者在目标对象中没有此属��的情况
+                    // NOTE，在 target[key] 不存在的时��也是直接覆�?
                     target[key] = clone(source[key], true);
                 }
             }
@@ -467,7 +467,7 @@
     }
 
     /**
-     * 构��类继承关系
+     * 构��类继承关系
      *
      * @memberOf module:zrender/core/util
      * @param {Function} clazz 源类
@@ -514,7 +514,7 @@
     }
 
     /**
-     * 数组或对象遍�?
+     * 数组或对象遍�?
      * @memberOf module:zrender/core/util
      * @param {Object|Array} obj
      * @param {Function} cb
@@ -615,7 +615,7 @@
     }
 
     /**
-     * 数组项查�?
+     * 数组项查�?
      * @memberOf module:zrender/core/util
      * @param {Array} obj
      * @param {Function} cb
@@ -953,7 +953,7 @@
         : Float32Array;
 
     /**
-     * 创建丢�个向�?
+     * 创建丢�个向�?
      * @param {number} [x=0]
      * @param {number} [y=0]
      * @return {Vector2}
@@ -984,7 +984,7 @@
     }
 
     /**
-     * 克隆丢�个向�?
+     * 克隆丢�个向�?
      * @param {Vector2} v
      * @return {Vector2}
      */
@@ -1021,7 +1021,7 @@
     }
 
     /**
-     * 向量缩放后相�?
+     * 向量缩放后相�?
      * @param {Vector2} out
      * @param {Vector2} v1
      * @param {Vector2} v2
@@ -1112,7 +1112,7 @@
     }
 
     /**
-     * 向量归一�?
+     * 向量归一�?
      * @param {Vector2} out
      * @param {Vector2} v
      */
@@ -1130,7 +1130,7 @@
     }
 
     /**
-     * 计算向量间距�?
+     * 计算向量间距�?
      * @param {Vector2} v1
      * @param {Vector2} v2
      * @return {number}
@@ -1167,7 +1167,7 @@
     }
 
     /**
-     * 插��两个点
+     * 插��两个点
      * @param {Vector2} out
      * @param {Vector2} v1
      * @param {Vector2} v2
@@ -1194,7 +1194,7 @@
     }
 
     /**
-     * 求两个向量最小��?
+     * 求两个向量最小��?
      * @param  {Vector2} out
      * @param  {Vector2} v1
      * @param  {Vector2} v2
@@ -1206,7 +1206,7 @@
     }
 
     /**
-     * 求两个向量最大��?
+     * 求两个向量最大��?
      * @param  {Vector2} out
      * @param  {Vector2} v1
      * @param  {Vector2} v2
@@ -1616,7 +1616,7 @@
     }
 
     /**
-     * 事件辅助�?
+     * 事件辅助�?
      * @module zrender/core/event
      * @author Kener (@Kener-林峰, kener.linfeng@gmail.com)
      */
@@ -1680,7 +1680,7 @@
     }
 
     /**
-     * 如果存在第三方嵌入的丢�些dom触发的事件，或touch事件，需要转换一下事件坐�?.
+     * 如果存在第三方嵌入的丢�些dom触发的事件，或touch事件，需要转换一下事件坐�?.
      * `calculate` is optional, default false.
      */
     function normalizeEvent(el, e, calculate) {
@@ -2156,10 +2156,10 @@
             }
 
             if (!eventPacket.cancelBubble) {
-                // 冒泡到顶�? zrender 对象
+                // 冒泡到顶�? zrender 对象
                 this.trigger(eventName, eventPacket);
-                // 分发事件到用户自定义�?
-                // 用户有可能在全局 click 事件�? dispose，所以需要判断下 painter 是否存在
+                // 分发事件到用户自定义�?
+                // 用户有可能在全局 click 事件�? dispose，所以需要判断下 painter 是否存在
                 this.painter && this.painter.eachOtherLayer(function (layer) {
                     if (typeof (layer[eventHandler]) === 'function') {
                         layer[eventHandler].call(layer, eventPacket);
@@ -2288,7 +2288,7 @@
     mixin(Handler, Draggable);
 
     /**
-     * 3x2矩阵操作�?
+     * 3x2矩阵操作�?
      * @exports zrender/tool/matrix
      */
 
@@ -2308,7 +2308,7 @@
     }
 
     /**
-     * 设置矩阵为单位矩�?
+     * 设置矩阵为单位矩�?
      * @param {Float32Array|Array.<number>} out
      */
     function identity(out) {
@@ -2421,7 +2421,7 @@
     }
 
     /**
-     * 求��矩�?
+     * 求��矩�?
      * @param {Float32Array|Array.<number>} out
      * @param {Float32Array|Array.<number>} a
      */
@@ -2528,8 +2528,8 @@
     transformableProto.transform = null;
 
     /**
-     * 判断是否霢�要有坐标变换
-     * 如果有坐标变�?, 则从position, rotation, scale以及父节点的transform计算出自身的transform矩阵
+     * 判断是否霢�要有坐标变换
+     * 如果有坐标变�?, 则从position, rotation, scale以及父节点的transform计算出自身的transform矩阵
      */
     transformableProto.needLocalTransform = function () {
         return isNotAroundZero(this.rotation)
@@ -2560,7 +2560,7 @@
             mIdentity(m);
         }
 
-        // 应用父节点变�?
+        // 应用父节点变�?
         if (parentHasTransform) {
             if (needLocalTransform) {
                 mul$1(m, parent.transform, m);
@@ -2595,7 +2595,7 @@
     };
 
     /**
-     * 将自己的transform应用到context�?
+     * 将自己的transform应用到context�?
      * @param {CanvasRenderingContext2D} ctx
      */
     transformableProto.setTransform = function (ctx) {
@@ -2695,7 +2695,7 @@
         return out;
     };
     /**
-     * 变换坐标位置�? shape 的局部坐标空�?
+     * 变换坐标位置�? shape 的局部坐标空�?
      * @method
      * @param {number} x
      * @param {number} y
@@ -2711,7 +2711,7 @@
     };
 
     /**
-     * 变换屢�部坐标位置到全局坐标空间
+     * 变换屢�部坐标位置到全局坐标空间
      * @method
      * @param {number} x
      * @param {number} y
@@ -2803,7 +2803,7 @@
             return -0.5 * (--k * (k - 2) - 1);
         },
 
-        // 三次方的缓动（t^3�?
+        // 三次方的缓动（t^3�?
         /**
          * @param {number} k
          * @return {number}
@@ -2829,7 +2829,7 @@
             return 0.5 * ((k -= 2) * k * k + 2);
         },
 
-        // 四次方的缓动（t^4�?
+        // 四次方的缓动（t^4�?
         /**
          * @param {number} k
          * @return {number}
@@ -2855,7 +2855,7 @@
             return -0.5 * ((k -= 2) * k * k * k - 2);
         },
 
-        // 五次方的缓动（t^5�?
+        // 五次方的缓动（t^5�?
         /**
          * @param {number} k
          * @return {number}
@@ -2881,7 +2881,7 @@
             return 0.5 * ((k -= 2) * k * k * k * k + 2);
         },
 
-        // 正弦曲线的缓动（sin(t)�?
+        // 正弦曲线的缓动（sin(t)�?
         /**
          * @param {number} k
          * @return {number}
@@ -2904,7 +2904,7 @@
             return 0.5 * (1 - Math.cos(Math.PI * k));
         },
 
-        // 指数曲线的缓动（2^t�?
+        // 指数曲线的缓动（2^t�?
         /**
          * @param {number} k
          * @return {number}
@@ -2936,7 +2936,7 @@
             return 0.5 * (-Math.pow(2, -10 * (k - 1)) + 2);
         },
 
-        // 圆形曲线的缓动（sqrt(1-t^2)�?
+        // 圆形曲线的缓动（sqrt(1-t^2)�?
         /**
          * @param {number} k
          * @return {number}
@@ -3041,7 +3041,7 @@
 
         },
 
-        // 在某丢�动画弢�始沿指示的路径进行动画处理前稍稍收回该动画的移动
+        // 在某丢�动画弢�始沿指示的路径进行动画处理前稍稍收回该动画的移动
         /**
          * @param {number} k
          * @return {number}
@@ -3110,11 +3110,11 @@
 
     /**
      * 动画主控制器
-     * @config target 动画对象，可以是数组，如果是数组的话会批量分发onframe等事�?
+     * @config target 动画对象，可以是数组，如果是数组的话会批量分发onframe等事�?
      * @config life(1000) 动画时长
      * @config delay(0) 动画延迟时间
      * @config loop(true)
-     * @config gap(0) 循环的间隔时�?
+     * @config gap(0) 循环的间隔时�?
      * @config onframe
      * @config easing(optional)
      * @config ondestroy(optional)
@@ -3131,7 +3131,7 @@
         this._life = options.life || 1000;
         // 延时
         this._delay = options.delay || 0;
-        // 弢�始时�?
+        // 弢�始时�?
         // this._startTime = new Date().getTime() + this._delay;// 单位毫秒
         this._initialized = false;
 
@@ -3169,7 +3169,7 @@
 
             var percent = (globalTime - this._startTime - this._pausedTime) / this._life;
 
-            // 还没弢��?
+            // 还没弢��?
             if (percent < 0) {
                 return;
             }
@@ -3188,13 +3188,13 @@
             if (percent === 1) {
                 if (this.loop) {
                     this.restart(globalTime);
-                    // 重新弢�始周�?
-                    // 抛出而不是直接调用事件直�? stage.update 后再统一调用这些事件
+                    // 重新弢�始周�?
+                    // 抛出而不是直接调用事件直�? stage.update 后再统一调用这些事件
                     return 'restart';
                 }
 
                 // 动画完成将这个控制器标识为待删除
-                // 在Animation.update中进行批量删�?
+                // 在Animation.update中进行批量删�?
                 this._needsRemove = true;
                 return 'destroy';
             }
@@ -4430,9 +4430,9 @@
 
     Animator.prototype = {
         /**
-         * 设置动画关键�?
+         * 设置动画关键�?
          * @param  {number} time 关键帧时间，单位是ms
-         * @param  {Object} props 关键帧的属����，key-value表示
+         * @param  {Object} props 关键帧的属����，key-value表示
          * @return {module:zrender/animation/Animator}
          */
         when: function (time /* ms */, props) {
@@ -4509,7 +4509,7 @@
             }
         },
         /**
-         * 弢�始执行动�?
+         * 弢�始执行动�?
          * @param  {string|Function} [easing]
          *         动画缓动函数，详见{@link module:zrender/animation/easing}
          * @param  {boolean} forceAnimate
@@ -4587,7 +4587,7 @@
             clipList.length = 0;
         },
         /**
-         * 设置动画延迟弢�始的时间
+         * 设置动画延迟弢�始的时间
          * @param  {number} time 单位ms
          * @return {module:zrender/animation/Animator}
          */
@@ -4596,7 +4596,7 @@
             return this;
         },
         /**
-         * 添加动画结束的回�?
+         * 添加动画结束的回�?
          * @param  {Function} cb
          * @return {module:zrender/animation/Animator}
          */
@@ -4623,16 +4623,16 @@
     }
 
     /**
-     * config默认配置�?
+     * config默认配置�?
      * @exports zrender/config
      * @author Kener (@Kener-林峰, kener.linfeng@gmail.com)
      */
 
     /**
-     * debug日志选项：catchBrushException为true下有�?
+     * debug日志选项：catchBrushException为true下有�?
      * 0 : 不生成debug数据，发布用
      * 1 : 异常抛出，调试用
-     * 2 : 控制台输出，调试�?
+     * 2 : 控制台输出，调试�?
      */
     var debugMode = 0;
 
@@ -4979,7 +4979,7 @@
         name: '',
 
         /**
-         * ZRender 实例对象，会�? element 添加�? zrender 实例中后自动赋��?
+         * ZRender 实例对象，会�? element 添加�? zrender 实例中后自动赋��?
          * ZRender instance will be assigned when element is associated with zrender
          * @name module:/zrender/Element#__zr
          * @type {module:zrender/ZRender}
@@ -4996,7 +4996,7 @@
         ignore: false,
 
         /**
-         * 用于裁剪的路�?(shape)，所�? Group 内的路径在绘制时都会被这个路径裁�?
+         * 用于裁剪的路�?(shape)，所�? Group 内的路径在绘制时都会被这个路径裁�?
          * 该路径会继承被裁减对象的变换
          * @type {module:zrender/graphic/Path}
          * @see http://www.w3.org/TR/2dcontext/#clipping-region
@@ -5005,7 +5005,7 @@
         clipPath: null,
 
         /**
-         * 是否�? Group
+         * 是否�? Group
          * @type {boolean}
          */
         isGroup: false,
@@ -5391,7 +5391,7 @@
     };
 
     /**
-     * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点�?
+     * Group是一个容器，可以插入子节点，Group的变换也会被应用到子节点�?
      * @module zrender/graphic/Group
      * @example
      *     var Group = require('zrender/container/Group');
@@ -5446,7 +5446,7 @@
         type: 'group',
 
         /**
-         * 扢�有子孙元素是否响应鼠标事�?
+         * 扢�有子孙元素是否响应鼠标事�?
          * @name module:/zrender/container/Group#silent
          * @type {boolean}
          * @default false
@@ -5461,7 +5461,7 @@
         },
 
         /**
-         * 获取指定 index 的儿子节�?
+         * 获取指定 index 的儿子节�?
          * @param  {number} idx
          * @return {module:zrender/Element}
          */
@@ -5470,7 +5470,7 @@
         },
 
         /**
-         * 获取指定名字的儿子节�?
+         * 获取指定名字的儿子节�?
          * @param  {string} name
          * @return {module:zrender/Element}
          */
@@ -5491,7 +5491,7 @@
         },
 
         /**
-         * 添加子节点到朢��?
+         * 添加子节点到朢��?
          * @param {module:zrender/Element} child
          */
         add: function (child) {
@@ -5548,7 +5548,7 @@
         },
 
         /**
-         * 移除子节�?
+         * 移除子节�?
          * @param {module:zrender/Element} child
          */
         remove: function (child) {
@@ -5579,7 +5579,7 @@
         },
 
         /**
-         * 移除扢�有子节点
+         * 移除扢�有子节点
          */
         removeAll: function () {
             var children = this._children;
@@ -5602,7 +5602,7 @@
         },
 
         /**
-         * 遍历扢�有子节点
+         * 遍历扢�有子节点
          * @param  {Function} cb
          * @param  {}   context
          */
@@ -5616,7 +5616,7 @@
         },
 
         /**
-         * 深度优先遍历扢�有子孙节�?
+         * 深度优先遍历扢�有子孙节�?
          * @param  {Function} cb
          * @param  {}   context
          */
@@ -6405,9 +6405,9 @@
         },
 
         /**
-         * 返回扢�有图形的绘制队列
-         * @param {boolean} [update=false] 是否在返回前更新该数�?
-         * @param {boolean} [includeIgnore=false] 是否包含 ignore 的数�?, �? update �? true 的时候有�?
+         * 返回扢�有图形的绘制队列
+         * @param {boolean} [update=false] 是否在返回前更新该数�?
+         * @param {boolean} [includeIgnore=false] 是否包含 ignore 的数�?, �? update �? true 的时候有�?
          *
          * 详见{@link module:zrender/graphic/Displayable.prototype.updateDisplayList}
          * @return {Array.<module:zrender/graphic/Displayable>}
@@ -6421,10 +6421,10 @@
         },
 
         /**
-         * 更新图形的绘制队列��?
-         * 每次绘制前都会调用，该方法会先深度优先遍历整个树，更新所有Group和Shape的变换并且把扢�有可见的Shape保存到数组中�?
-         * 朢�后根据绘制的优先级（zlevel > z > 插入顺序）排序得到绘制队�?
-         * @param {boolean} [includeIgnore=false] 是否包含 ignore 的数�?
+         * 更新图形的绘制队列��?
+         * 每次绘制前都会调用，该方法会先深度优先遍历整个树，更新所有Group和Shape的变换并且把扢�有可见的Shape保存到数组中�?
+         * 朢�后根据绘制的优先级（zlevel > z > 插入顺序）排序得到绘制队�?
+         * @param {boolean} [includeIgnore=false] 是否包含 ignore 的数�?
          */
         updateDisplayList: function (includeIgnore) {
             this._displayListLen = 0;
@@ -6471,7 +6471,7 @@
                 var parentClipPath = el;
                 // Recursively add clip path
                 while (currentClipPath) {
-                    // clipPath 的变换是基于使用这个 clipPath 的元�?
+                    // clipPath 的变换是基于使用这个 clipPath 的元�?
                     currentClipPath.parent = parentClipPath;
                     currentClipPath.updateTransform();
 
@@ -6509,7 +6509,7 @@
         },
 
         /**
-         * 添加图形(Shape)或��组(Group)到根节点
+         * 添加图形(Shape)或��组(Group)到根节点
          * @param {module:zrender/Element} el
          */
         addRoot: function (el) {
@@ -6526,7 +6526,7 @@
         },
 
         /**
-         * 删除指定的图�?(Shape)或��组(Group)
+         * 删除指定的图�?(Shape)或��组(Group)
          * @param {string|Array.<string>} [el] 如果为空清空整个Storage
          */
         delRoot: function (el) {
@@ -7178,7 +7178,7 @@
 
         var domStyle = dom.style;
         if (domStyle) { // Not in node
-            dom.onselectstart = returnFalse; // 避免页面选中的尴�?
+            dom.onselectstart = returnFalse; // 避免页面选中的尴�?
             domStyle['-webkit-user-select'] = 'none';
             domStyle['user-select'] = 'none';
             domStyle['-webkit-touch-callout'] = 'none';
@@ -7197,19 +7197,19 @@
 
         // Configs
         /**
-         * 每次清空画布的颜�?
+         * 每次清空画布的颜�?
          * @type {string}
          * @default 0
          */
         this.clearColor = 0;
         /**
-         * 是否弢�启动态模�?
+         * 是否弢�启动态模�?
          * @type {boolean}
          * @default false
          */
         this.motionBlur = false;
         /**
-         * 在开启动态模糊的时��使用，与上丢�帧混合的alpha值，值越大尾迹越明显
+         * 在开启动态模糊的时��使用，与上丢�帧混合的alpha值，值越大尾迹越明显
          * @type {number}
          * @default 0.7
          */
@@ -7726,14 +7726,14 @@
         var minChar = options.minChar = retrieve2(options.minChar, 0);
         // FIXME
         // Other languages?
-        options.cnCharWidth = getWidth('�?', font);
+        options.cnCharWidth = getWidth('�?', font);
         // FIXME
         // Consider proportional font?
         var ascCharWidth = options.ascCharWidth = getWidth('a', font);
         options.placeholder = retrieve2(options.placeholder, '');
 
         // Example 1: minChar: 3, text: 'asdfzxcv', truncate result: 'asdf', but not: 'a...'.
-        // Example 2: minChar: 3, text: '维度', truncate result: '�?', but not: '...'.
+        // Example 2: minChar: 3, text: '维度', truncate result: '�?', but not: '...'.
         var contentWidth = containerWidth = Math.max(0, containerWidth - 1); // Reserve some gap.
         for (var i = 0; i < minChar && contentWidth >= ascCharWidth; i++) {
             contentWidth -= ascCharWidth;
@@ -7810,7 +7810,7 @@
      */
     function getLineHeight(font) {
         // FIXME A rough approach.
-        return getWidth('�?', font);
+        return getWidth('�?', font);
     }
 
     /**
@@ -8900,7 +8900,7 @@
         type: 'displayable',
 
         /**
-         * Displayable 是否为脏，Painter 中会根据该标记判断是否需要是否需要重新绘�?
+         * Displayable 是否为脏，Painter 中会根据该标记判断是否需要是否需要重新绘�?
          * Dirty flag. From which painter will determine if this displayable object needs brush
          * @name module:zrender/graphic/Displayable#__dirty
          * @type {boolean}
@@ -8908,7 +8908,7 @@
         __dirty: true,
 
         /**
-         * 图形是否可见，为true时不绘制图形，但是仍能触发鼠标事�?
+         * 图形是否可见，为true时不绘制图形，但是仍能触发鼠标事�?
          * If ignore drawing of the displayable object. Mouse event will still be triggered
          * @name module:/zrender/graphic/Displayable#invisible
          * @type {boolean}
@@ -8931,7 +8931,7 @@
         z2: 0,
 
         /**
-         * z层level，决定绘画在哪层canvas�?
+         * z层level，决定绘画在哪层canvas�?
          * @name module:/zrender/graphic/Displayable#zlevel
          * @type {number}
          * @default 0
@@ -8939,7 +8939,7 @@
         zlevel: 0,
 
         /**
-         * 是否可拖�?
+         * 是否可拖�?
          * @name module:/zrender/graphic/Displayable#draggable
          * @type {boolean}
          * @default false
@@ -9012,7 +9012,7 @@
         brush: function (ctx, prevEl) {},
 
         /**
-         * 获取朢�小包围盒
+         * 获取朢�小包围盒
          * @return {module:zrender/core/BoundingRect}
          */
         // Interface
@@ -9051,7 +9051,7 @@
         },
 
         /**
-         * 标记图形元素为脏，并且在下一帧重�?
+         * 标记图形元素为脏，并且在下一帧重�?
          * Mark displayable element dirty and refresh next frame
          */
         dirty: function () {
@@ -9063,11 +9063,11 @@
         },
 
         /**
-         * 图形是否会触发事�?
+         * 图形是否会触发事�?
          * If displayable object binded any event
          * @return {boolean}
          */
-        // TODO, 通过 bind 绑定的事�?
+        // TODO, 通过 bind 绑定的事�?
         // isSilent: function () {
         //     return !(
         //         this.hoverable || this.draggable
@@ -9297,7 +9297,7 @@
     function createRoot(width, height) {
         var domRoot = document.createElement('div');
 
-        // domRoot.onselectstart = returnFalse; // 避免页面选中的尴�?
+        // domRoot.onselectstart = returnFalse; // 避免页面选中的尴�?
         domRoot.style.cssText = [
                 'position:relative',
                 'overflow:hidden',
@@ -9469,7 +9469,7 @@
 
         /**
          * 刷新
-         * @param {boolean} [paintAll=false] 强制绘制扢�有displayable
+         * @param {boolean} [paintAll=false] 强制绘制扢�有displayable
          */
         refresh: function (paintAll) {
 
@@ -9754,7 +9754,7 @@
         },
 
         /**
-         * 获取 zlevel 扢�在层，如果不存在则会创建丢�个新的层
+         * 获取 zlevel 扢�在层，如果不存在则会创建丢�个新的层
          * @param {number} zlevel
          * @param {boolean} virtual Virtual layer will not be inserted into dom.
          * @return {module:zrender/Layer}
@@ -9891,7 +9891,7 @@
         },
 
         /**
-         * 获取扢�有已创建的层
+         * 获取扢�有已创建的层
          * @param {Array.<module:zrender/Layer>} [prevLayer]
          */
         getLayers: function () {
@@ -9985,7 +9985,7 @@
         },
 
         /**
-         * 清除hover层外扢�有内�?
+         * 清除hover层外扢�有内�?
          */
         clear: function () {
             this.eachBuiltinLayer(this._clearLayer);
@@ -10001,14 +10001,14 @@
         },
 
         /**
-         * 修改指定zlevel的绘制参�?
+         * 修改指定zlevel的绘制参�?
          *
          * @param {string} zlevel
          * @param {Object} config 配置对象
-         * @param {string} [config.clearColor=0] 每次清空画布的颜�?
-         * @param {string} [config.motionBlur=false] 是否弢�启动态模�?
+         * @param {string} [config.clearColor=0] 每次清空画布的颜�?
+         * @param {string} [config.motionBlur=false] 是否弢�启动态模�?
          * @param {number} [config.lastFrameAlpha=0.7]
-         *                 在开启动态模糊的时��使用，与上丢�帧混合的alpha值，值越大尾迹越明显
+         *                 在开启动态模糊的时��使用，与上丢�帧混合的alpha值，值越大尾迹越明显
          */
         configLayer: function (zlevel, config) {
             if (config) {
@@ -10031,7 +10031,7 @@
         },
 
         /**
-         * 删除指定�?
+         * 删除指定�?
          * @param {number} zlevel 层所在的zlevel
          */
         delLayer: function (zlevel) {
@@ -10048,7 +10048,7 @@
         },
 
         /**
-         * 区域大小变化后重�?
+         * 区域大小变化后重�?
          */
         resize: function (width, height) {
             if (!this._domRoot.style) { // Maybe in node or worker
@@ -10611,7 +10611,7 @@
         },
 
         /**
-         * Touch弢�始响应函�?
+         * Touch弢�始响应函�?
          * @inner
          * @param {Event} event
          */
@@ -10750,7 +10750,7 @@
      * 为控制类实例初始化dom 事件处理函数
      *
      * @inner
-     * @param {module:zrender/Handler} instance 控制类实�?
+     * @param {module:zrender/Handler} instance 控制类实�?
      */
     function initDomHandler(instance) {
         each$1(touchHandlerNames, function (name) {
@@ -12261,7 +12261,7 @@
         return val > EPSILON$1 || val < -EPSILON$1;
     }
     /**
-     * 计算三次贝塞尔��?
+     * 计算三次贝塞尔��?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12277,7 +12277,7 @@
     }
 
     /**
-     * 计算三次贝塞尔导数��?
+     * 计算三次贝塞尔导数��?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12295,7 +12295,7 @@
     }
 
     /**
-     * 计算三次贝塞尔方程根，使用盛金公�?
+     * 计算三次贝塞尔方程根，使用盛金公�?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12303,7 +12303,7 @@
      * @param  {number} p3
      * @param  {number} val
      * @param  {Array.<number>} roots
-     * @return {number} 有效根数�?
+     * @return {number} 有效根数�?
      */
     function cubicRootAt(p0, p1, p2, p3, val, roots) {
         // Evaluate roots of cubic functions
@@ -12388,7 +12388,7 @@
     }
 
     /**
-     * 计算三次贝塞尔方程极限��的位置
+     * 计算三次贝塞尔方程极限��的位置
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12432,7 +12432,7 @@
     }
 
     /**
-     * 细分三次贝塞尔曲�?
+     * 细分三次贝塞尔曲�?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12463,8 +12463,8 @@
     }
 
     /**
-     * 投射点到三次贝塞尔曲线上，返回投射距离��?
-     * 投射点有可能会有丢�个或者多个，这里只返回其中距离最短的丢�个��?
+     * 投射点到三次贝塞尔曲线上，返回投射距离��?
+     * 投射点有可能会有丢�个或者多个，这里只返回其中距离最短的丢�个��?
      * @param {number} x0
      * @param {number} y0
      * @param {number} x1
@@ -12475,7 +12475,7 @@
      * @param {number} y3
      * @param {number} x
      * @param {number} y
-     * @param {Array.<number>} [out] 投射�?
+     * @param {Array.<number>} [out] 投射�?
      * @return {number}
      */
     function cubicProjectPoint(
@@ -12494,7 +12494,7 @@
         _v0[0] = x;
         _v0[1] = y;
 
-        // 先粗略估计一下可能的朢�小距离的 t �?
+        // 先粗略估计一下可能的朢�小距离的 t �?
         // PENDING
         for (var _t = 0; _t < 1; _t += 0.05) {
             _v1[0] = cubicAt(x0, x1, x2, x3, _t);
@@ -12549,7 +12549,7 @@
     }
 
     /**
-     * 计算二次方贝塞尔�?
+     * 计算二次方贝塞尔�?
      * @param  {number} p0
      * @param  {number} p1
      * @param  {number} p2
@@ -12562,7 +12562,7 @@
     }
 
     /**
-     * 计算二次方贝塞尔导数�?
+     * 计算二次方贝塞尔导数�?
      * @param  {number} p0
      * @param  {number} p1
      * @param  {number} p2
@@ -12574,13 +12574,13 @@
     }
 
     /**
-     * 计算二次方贝塞尔方程�?
+     * 计算二次方贝塞尔方程�?
      * @param  {number} p0
      * @param  {number} p1
      * @param  {number} p2
      * @param  {number} t
      * @param  {Array.<number>} roots
-     * @return {number} 有效根数�?
+     * @return {number} 有效根数�?
      */
     function quadraticRootAt(p0, p1, p2, val, roots) {
         var a = p0 - 2 * p1 + p2;
@@ -12620,7 +12620,7 @@
     }
 
     /**
-     * 计算二次贝塞尔方程极限��?
+     * 计算二次贝塞尔方程极限��?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12639,7 +12639,7 @@
     }
 
     /**
-     * 细分二次贝塞尔曲�?
+     * 细分二次贝塞尔曲�?
      * @memberOf module:zrender/core/curve
      * @param  {number} p0
      * @param  {number} p1
@@ -12664,8 +12664,8 @@
     }
 
     /**
-     * 投射点到二次贝塞尔曲线上，返回投射距离��?
-     * 投射点有可能会有丢�个或者多个，这里只返回其中距离最短的丢�个��?
+     * 投射点到二次贝塞尔曲线上，返回投射距离��?
+     * 投射点有可能会有丢�个或者多个，这里只返回其中距离最短的丢�个��?
      * @param {number} x0
      * @param {number} y0
      * @param {number} x1
@@ -12674,7 +12674,7 @@
      * @param {number} y2
      * @param {number} x
      * @param {number} y
-     * @param {Array.<number>} out 投射�?
+     * @param {Array.<number>} out 投射�?
      * @return {number}
      */
     function quadraticProjectPoint(
@@ -12689,7 +12689,7 @@
         _v0[0] = x;
         _v0[1] = y;
 
-        // 先粗略估计一下可能的朢�小距离的 t �?
+        // 先粗略估计一下可能的朢�小距离的 t �?
         // PENDING
         for (var _t = 0; _t < 1; _t += 0.05) {
             _v1[0] = quadraticAt(x0, x1, x2, _t);
@@ -12757,7 +12757,7 @@
     var extremity = create();
 
     /**
-     * 从顶点数组中计算出最小包围盒，写入`min`和`max`�?
+     * 从顶点数组中计算出最小包围盒，写入`min`和`max`�?
      * @module zrender/core/bbox
      * @param {Array<Object>} points 顶点数组
      * @param {number} min
@@ -12807,7 +12807,7 @@
     var xDim = [];
     var yDim = [];
     /**
-     * 从三阶贝塞尔曲线(p0, p1, p2, p3)中计算出朢�小包围盒，写入`min`和`max`�?
+     * 从三阶贝塞尔曲线(p0, p1, p2, p3)中计算出朢�小包围盒，写入`min`和`max`�?
      * @memberOf module:zrender/core/bbox
      * @param {number} x0
      * @param {number} y0
@@ -12856,7 +12856,7 @@
     }
 
     /**
-     * 从二阶贝塞尔曲线(p0, p1, p2)中计算出朢�小包围盒，写入`min`和`max`�?
+     * 从二阶贝塞尔曲线(p0, p1, p2)中计算出朢�小包围盒，写入`min`和`max`�?
      * @memberOf module:zrender/core/bbox
      * @param {number} x0
      * @param {number} y0
@@ -12890,7 +12890,7 @@
     }
 
     /**
-     * 从圆弧中计算出最小包围盒，写入`min`和`max`�?
+     * 从圆弧中计算出最小包围盒，写入`min`和`max`�?
      * @method
      * @memberOf module:zrender/core/bbox
      * @param {number} x
@@ -12966,7 +12966,7 @@
     }
 
     /**
-     * Path 代理，可以在`buildPath`中用于替代`ctx`, 会保存每个path操作的命令到pathCommands属��中
+     * Path 代理，可以在`buildPath`中用于替代`ctx`, 会保存每个path操作的命令到pathCommands属��中
      * 可以用于 isInsidePath 判断以及获取boundingRect
      *
      * @module zrender/core/PathProxy
@@ -13029,7 +13029,7 @@
     };
 
     /**
-     * 快��计算Path包围盒（并不是最小包围盒�?
+     * 快��计算Path包围盒（并不是最小包围盒�?
      * @return {Object}
      */
     PathProxy.prototype = {
@@ -13102,10 +13102,10 @@
             this.addData(CMD.M, x, y);
             this._ctx && this._ctx.moveTo(x, y);
 
-            // x0, y0, xi, yi 是记录在 _dashedXXXXTo 方法中使�?
-            // xi, yi 记录当前�?, x0, y0 �? closePath 的时候回到起始点�?
-            // 有可能在 beginPath 之后直接调用 lineTo，这时��? x0, y0 霢��?
-            // �? lineTo 方法中记录，这里先不考虑这种情况，dashed line 也只�? IE10- 中不支持
+            // x0, y0, xi, yi 是记录在 _dashedXXXXTo 方法中使�?
+            // xi, yi 记录当前�?, x0, y0 �? closePath 的时候回到起始点�?
+            // 有可能在 beginPath 之后直接调用 lineTo，这时��? x0, y0 霢��?
+            // �? lineTo 方法中记录，这里先不考虑这种情况，dashed line 也只�? IE10- 中不支持
             this._x0 = x;
             this._y0 = y;
 
@@ -13233,7 +13233,7 @@
         },
 
         /**
-         * Context 从外部传入，因为有可能是 rebuildPath 完之后再 fill�?
+         * Context 从外部传入，因为有可能是 rebuildPath 完之后再 fill�?
          * stroke 同样
          * @param {CanvasRenderingContext2D} ctx
          * @return {module:zrender/core/PathProxy}
@@ -13309,7 +13309,7 @@
         },
 
         /**
-         * 添加子路�?
+         * 添加子路�?
          * @param {module:zrender/core/PathProxy|Array.<module:zrender/core/PathProxy>} path
          */
         appendPath: function (path) {
@@ -13335,8 +13335,8 @@
         },
 
         /**
-         * 填充 Path 数据�?
-         * 尽量复用而不申明新的数组。大部分图形重绘的指令数据长度都是不变的�?
+         * 填充 Path 数据�?
+         * 尽量复用而不申明新的数组。大部分图形重绘的指令数据长度都是不变的�?
          */
         addData: function (cmd) {
             if (!this._saveData) {
@@ -13345,8 +13345,8 @@
 
             var data = this.data;
             if (this._len + arguments.length > data.length) {
-                // 因为之前的数组已经转换成静��的 Float32Array
-                // 扢�以不够用时需要扩展一个新的动态数�?
+                // 因为之前的数组已经转换成静��的 Float32Array
+                // 扢�以不够用时需要扩展一个新的动态数�?
                 this._expandData();
                 data = this.data;
             }
@@ -13506,7 +13506,7 @@
         },
 
         /**
-         * 转成静��的 Float32Array 减少堆内存占�?
+         * 转成静��的 Float32Array 减少堆内存占�?
          * Convert dynamic array to static Float32Array
          */
         toStatic: function () {
@@ -13537,7 +13537,7 @@
 
                 if (i === 1) {
                     // 如果第一个命令是 L, C, Q
-                    // �? previous point 同绘制命令的第一�? point
+                    // �? previous point 同绘制命令的第一�? point
                     //
                     // 第一个命令为 Arc 的情况下会在后面特殊处理
                     xi = data[i];
@@ -13549,8 +13549,8 @@
 
                 switch (cmd) {
                     case CMD.M:
-                        // moveTo 命令重新创建丢�个新�? subpath, 并且更新新的起点
-                        // �? closePath 的时候使�?
+                        // moveTo 命令重新创建丢�个新�? subpath, 并且更新新的起点
+                        // �? closePath 的时候使�?
                         x0 = data[i++];
                         y0 = data[i++];
                         xi = x0;
@@ -13582,7 +13582,7 @@
                         yi = data[i++];
                         break;
                     case CMD.A:
-                        // TODO Arc 判断的开锢�比较�?
+                        // TODO Arc 判断的开锢�比较�?
                         var cx = data[i++];
                         var cy = data[i++];
                         var rx = data[i++];
@@ -13595,7 +13595,7 @@
 
                         if (i === 1) {
                             // 直接使用 arc 命令
-                            // 第一个命令起点还未定�?
+                            // 第一个命令起点还未定�?
                             x0 = mathCos$1(startAngle) * rx + cx;
                             y0 = mathSin$1(startAngle) * ry + cy;
                         }
@@ -13655,7 +13655,7 @@
 
                 if (i === 1) {
                     // 如果第一个命令是 L, C, Q
-                    // �? previous point 同绘制命令的第一�? point
+                    // �? previous point 同绘制命令的第一�? point
                     //
                     // 第一个命令为 Arc 的情况下会在后面特殊处理
                     xi = d[i];
@@ -13721,7 +13721,7 @@
 
                         if (i === 1) {
                             // 直接使用 arc 命令
-                            // 第一个命令起点还未定�?
+                            // 第一个命令起点还未定�?
                             x0 = mathCos$1(theta) * rx + cx;
                             y0 = mathSin$1(theta) * ry + cy;
                         }
@@ -13785,7 +13785,7 @@
     }
 
     /**
-     * 三次贝塞尔曲线描边包含判�?
+     * 三次贝塞尔曲线描边包含判�?
      * @param  {number}  x0
      * @param  {number}  y0
      * @param  {number}  x1
@@ -13821,7 +13821,7 @@
     }
 
     /**
-     * 二次贝塞尔曲线描边包含判�?
+     * 二次贝塞尔曲线描边包含判�?
      * @param  {number}  x0
      * @param  {number}  y0
      * @param  {number}  x1
@@ -14153,7 +14153,7 @@
                 if (!isStroke) {
                     w += windingLine(xi, yi, x0, y0, x, y);
                 }
-                // 如果被任何一�? subpath 包含
+                // 如果被任何一�? subpath 包含
                 // if (w !== 0) {
                 //     return true;
                 // }
@@ -14161,7 +14161,7 @@
 
             if (i === 1) {
                 // 如果第一个命令是 L, C, Q
-                // �? previous point 同绘制命令的第一�? point
+                // �? previous point 同绘制命令的第一�? point
                 //
                 // 第一个命令为 Arc 的情况下会在后面特殊处理
                 xi = data[i];
@@ -14173,8 +14173,8 @@
 
             switch (cmd) {
                 case CMD$1.M:
-                    // moveTo 命令重新创建丢�个新�? subpath, 并且更新新的起点
-                    // �? closePath 的时候使�?
+                    // moveTo 命令重新创建丢�个新�? subpath, 并且更新新的起点
+                    // �? closePath 的时候使�?
                     x0 = data[i++];
                     y0 = data[i++];
                     xi = x0;
@@ -14187,7 +14187,7 @@
                         }
                     }
                     else {
-                        // NOTE 在第丢�个命令为 L, C, Q 的时候会计算�? NaN
+                        // NOTE 在第丢�个命令为 L, C, Q 的时候会计算�? NaN
                         w += windingLine(xi, yi, data[i], data[i + 1], x, y) || 0;
                     }
                     xi = data[i++];
@@ -14232,7 +14232,7 @@
                     yi = data[i++];
                     break;
                 case CMD$1.A:
-                    // TODO Arc 判断的开锢�比较�?
+                    // TODO Arc 判断的开锢�比较�?
                     var cx = data[i++];
                     var cy = data[i++];
                     var rx = data[i++];
@@ -14249,11 +14249,11 @@
                         w += windingLine(xi, yi, x1, y1, x, y);
                     }
                     else {
-                        // 第一个命令起点还未定�?
+                        // 第一个命令起点还未定�?
                         x0 = x1;
                         y0 = y1;
                     }
-                    // zr 使用scale来模拟椭�?, 这里也对x做一定的缩放
+                    // zr 使用scale来模拟椭�?, 这里也对x做一定的缩放
                     var _x = (x - cx) * ry / rx + cx;
                     if (isStroke) {
                         if (containStroke$4(
@@ -14305,7 +14305,7 @@
                     else {
                         // Close a subpath
                         w += windingLine(xi, yi, x0, y0, x, y);
-                        // 如果被任何一�? subpath 包含
+                        // 如果被任何一�? subpath 包含
                         // FIXME subpaths may overlap
                         // if (w !== 0) {
                         //     return true;
@@ -14661,7 +14661,7 @@
     };
 
     /**
-     * 扩展丢��? Path element, 比如星形，圆等��?
+     * 扩展丢��? Path element, 比如星形，圆等��?
      * Extend a path element
      * @param {Object} props
      * @param {string} props.type Path type
@@ -14699,7 +14699,7 @@
 
         inherits(Sub, Path);
 
-        // FIXME 不能 extend position, rotation 等引用对�?
+        // FIXME 不能 extend position, rotation 等引用对�?
         for (var name in defaults$$1) {
             // Extending prototype values and methods
             if (name !== 'style' && name !== 'shape') {
@@ -15513,7 +15513,7 @@
     });
 
     /**
-     * Catmull-Rom spline 插��折�?
+     * Catmull-Rom spline 插��折�?
      * @module zrender/shape/util/smoothSpline
      * @author pissang (https://www.github.com/pissang)
      *         Kener (@Kener-林峰, kener.linfeng@gmail.com)
@@ -15581,7 +15581,7 @@
     };
 
     /**
-     * 贝塞尔平滑曲�?
+     * 贝塞尔平滑曲�?
      * @module zrender/shape/util/smoothBezier
      * @author pissang (https://www.github.com/pissang)
      *         Kener (@Kener-林峰, kener.linfeng@gmail.com)
@@ -15589,14 +15589,14 @@
      */
 
     /**
-     * 贝塞尔平滑曲�?
+     * 贝塞尔平滑曲�?
      * @alias module:zrender/shape/util/smoothBezier
      * @param {Array} points 线段顶点数组
      * @param {number} smooth 平滑等级, 0-1
      * @param {boolean} isLoop
-     * @param {Array} constraint 将计算出来的控制点约束在丢�个包围盒�?
-     *                           比如 [[0, 0], [100, 100]], 这个包围盒会�?
-     *                           整个折线的包围盒做一个并集用来约束控制点�?
+     * @param {Array} constraint 将计算出来的控制点约束在丢�个包围盒�?
+     *                           比如 [[0, 0], [100, 100]], 这个包围盒会�?
+     *                           整个折线的包围盒做一个并集用来约束控制点�?
      * @param {Array} 计算出来的控制点数组
      */
     var smoothBezier = function (points, smooth, isLoop, constraint) {
@@ -15710,7 +15710,7 @@
     }
 
     /**
-     * 多边�?
+     * 多边�?
      * @module zrender/shape/Polygon
      */
 
@@ -15877,11 +15877,11 @@
         type: 'rect',
 
         shape: {
-            // 左上、右上��右下��左下角的半径依次为r1、r2、r3、r4
-            // r缩写�?1         相当�? [1, 1, 1, 1]
-            // r缩写为[1]       相当�? [1, 1, 1, 1]
-            // r缩写为[1, 2]    相当�? [1, 2, 1, 2]
-            // r缩写为[1, 2, 3] 相当�? [1, 2, 3, 2]
+            // 左上、右上��右下��左下角的半径依次为r1、r2、r3、r4
+            // r缩写�?1         相当�? [1, 1, 1, 1]
+            // r缩写为[1]       相当�? [1, 1, 1, 1]
+            // r缩写为[1, 2]    相当�? [1, 2, 1, 2]
+            // r缩写为[1, 2, 3] 相当�? [1, 2, 3, 2]
             r: 0,
 
             x: 0,
@@ -16001,7 +16001,7 @@
     });
 
     /**
-     * 贝塞尔曲�?
+     * 贝塞尔曲�?
      * @module zrender/shape/BezierCurve
      */
 
@@ -17899,7 +17899,7 @@
         init: null,
 
         /**
-         * 从新�? Option merge
+         * 从新�? Option merge
          */
         mergeOption: function (option) {
             merge(this.option, option, true);
@@ -18596,8 +18596,8 @@
     }
 
     /**
-     * find a “nice�? number approximately equal to x. Round the number if round = true,
-     * take ceiling if round = false. The primary observation is that the “nicest�?
+     * find a “nice�? number approximately equal to x. Round the number if round = true,
+     * take ceiling if round = false. The primary observation is that the “nicest�?
      * numbers in decimal are 1, 2, and 5, and all power-of-ten multiples of these numbers.
      *
      * See "Nice Numbers for Graph Labels" of Graphic Gems.
@@ -18815,7 +18815,7 @@
 // import Text from 'zrender/src/graphic/Text';
 
     /**
-     * �U�^?�G?ˎ?ݰ��??,?��????
+     * �U�^?�G?ˎ?ݰ��??,?��????
      * @param {string|number} x
      * @return {string}
      */
@@ -21493,7 +21493,7 @@
             if (name === 'colorLayer' && notMergeColorLayer) {
                 return;
             }
-            // �T????? component model ?????϶??? merge ?֫?�D��?�r? model ��???
+            // �T????? component model ?????϶??? merge ?֫?�D��?�r? model ��???
             if (!ComponentModel.hasClass(name)) {
                 if (typeof themeItem === 'object') {
                     option[name] = !option[name]
@@ -21875,7 +21875,7 @@
             rawOption = clone$3(rawOption, true);
 
             // FIXME
-            // �T??? timeline options ???? media ��??��????��???��???baseOption��?Ѻ??ݰة���???�C?��?ƍ?????
+            // �T??? timeline options ???? media ��??��????��???��???baseOption��?Ѻ??ݰة���???�C?��?ƍ?????
 
             var oldOptionBackup = this._optionBackup;
             var newParsedOption = parseRawOption.call(
@@ -21914,7 +21914,7 @@
             var optionBackup = this._optionBackup;
 
             // TODO
-            // �T???�]�R??reset???��??��?clone??
+            // �T???�]�R??reset???��??��?clone??
 
             this._timelineOptions = map$1(optionBackup.timelineOptions, clone$3);
             this._mediaList = map$1(optionBackup.mediaList, clone$3);
@@ -21979,7 +21979,7 @@
             }
 
             // FIXME
-            // ????mediaDefault�_?�r��ʧ?��???�Q?��?????????Ѳ��?��??��??�Z???
+            // ????mediaDefault�_?�r��ʧ?��???�Q?��?????????Ѳ��?��??��??�Z???
             if (!indices.length && mediaDefault) {
                 indices = [-1];
             }
@@ -24760,94 +24760,94 @@
         toolbox: {
             brush: {
                 title: {
-                    rect: '??��????',
+                    rect: '??��????',
                     polygon: '????',
-                    lineX: '��???????',
-                    lineY: 'Ē��??????',
+                    lineX: '��???????',
+                    lineY: 'Ē��??????',
                     keep: '׭???????',
-                    clear: '��??��????'
+                    clear: '��??��????'
                 }
             },
             dataView: {
-                title: '?��?????',
-                lang: ['?��?????', '?�f??', '?��??']
+                title: '?��?????',
+                lang: ['?��?????', '?�f??', '?��??']
             },
             dataZoom: {
                 title: {
-                    zoom: '?��??đ???',
-                    back: '?��??đ??�\???'
+                    zoom: '?��??đ???',
+                    back: '?��??đ??�\???'
                 }
             },
             magicType: {
                 title: {
-                    line: '????�p??Ēˮ??',
-                    bar: '????�p?Ԯ?��??',
-                    stack: '????�p????',
-                    tiled: '????�p�B�f??'
+                    line: '????�p??Ēˮ??',
+                    bar: '????�p?Ԯ?��??',
+                    stack: '????�p????',
+                    tiled: '????�p�B�f??'
                 }
             },
             restore: {
-                title: '�C???'
+                title: '�C???'
             },
             saveAsImage: {
-                title: '׭?�_?����?ة??',
-                lang: ['?��????����?ة??']
+                title: '׭?�_?����?ة??',
+                lang: ['?��????����?ة??']
             }
         },
         series: {
             typeNames: {
-                pie: 'ʟ��??',
-                bar: '?Ԯ?��??',
+                pie: 'ʟ��??',
+                bar: '?Ԯ?��??',
                 line: '??Ēˮ??',
-                scatter: '?��?��??',
-                effectScatter: '��?��??��?��??',
-                radar: '?�Q��??',
+                scatter: '?��?��??',
+                effectScatter: '��?��??��?��??',
+                radar: '?�Q��??',
                 tree: '????',
-                treemap: '??��????',
-                boxplot: '��Թ????',
+                treemap: '??��????',
+                boxplot: '��Թ????',
                 candlestick: 'KĒˮ??',
                 k: 'KĒˮ??',
                 heatmap: '??????',
                 map: '?ҽ??',
-                parallel: '�B��???????',
+                parallel: '�B��???????',
                 lines: 'Ēˮ??',
-                graph: '?���z??',
-                sankey: '��??��??',
-                funnel: '��?????',
-                gauge: '��?��????',
-                pictorialBar: '�t�Q��?Թ??',
-                themeRiver: '��֬?�]ǡ???',
-                sunburst: '???��??'
+                graph: '?���z??',
+                sankey: '��??��??',
+                funnel: '��?????',
+                gauge: '��?��????',
+                pictorialBar: '�t�Q��?Թ??',
+                themeRiver: '��֬?�]ǡ???',
+                sunburst: '???��??'
             }
         },
         aria: {
             general: {
-                withTitle: '�C????��??��????{title}?????�\��??',
-                withoutTitle: '�C????��??�\���?'
+                withTitle: '�C????��??��????{title}?????�\��??',
+                withoutTitle: '�C????��??�\���?'
             },
             series: {
                 single: {
                     prefix: '',
-                    withName: '?�\���z��????{seriesType}�?��?��{seriesName}??',
-                    withoutName: '?�\���z��????{seriesType}??'
+                    withName: '?�\���z��????{seriesType}�?��?��{seriesName}??',
+                    withoutName: '?�\���z��????{seriesType}??'
                 },
                 multiple: {
-                    prefix: '�W???{seriesCount}��??�\���}��??Ď?????',
-                    withName: '�e?{seriesId}��?�z?????��?����?{seriesName}??{seriesType}�?',
-                    withoutName: '�e?{seriesId}��?�z?????��?{seriesType}�?',
+                    prefix: '�W???{seriesCount}��??�\���}��??Ď?????',
+                    withName: '�e?{seriesId}��?�z?????��?����?{seriesName}??{seriesType}�?',
+                    withoutName: '�e?{seriesId}��?�z?????��?{seriesType}�?',
                     separator: {
-                        middle: '�?',
+                        middle: '�?',
                         end: '??'
                     }
                 }
             },
             data: {
-                allData: '?��?��????????',
-                partialData: '?�y�t�???{displayCnt}�n��??????',
-                withName: '{name}???��????{value}',
+                allData: '?��?��????????',
+                partialData: '?�y�t�???{displayCnt}�n��??????',
+                withName: '{name}???��????{value}',
                 withoutName: '{value}',
                 separator: {
-                    middle: '�?',
+                    middle: '�?',
                     end: ''
                 }
             }
@@ -25015,7 +25015,7 @@
         }
 
         function getSeriesTypeName(type) {
-            return lang.series.typeNames[type] || '???��???';
+            return lang.series.typeNames[type] || '???��???';
         }
     };
 
@@ -25937,7 +25937,7 @@
     });
 
     /**
-     * ��???�Z��??
+     * ��???�Z��??
      * @module zrender/graphic/shape/Ellipse
      */
 
@@ -25956,9 +25956,9 @@
             var y = shape.cy;
             var a = shape.rx;
             var b = shape.ry;
-            var ox = a * k; // �\�D��???��?��?�@֬??
-            var oy = b * k; // ???ٞ??��?��?�@֬??
-            // ��?��?????��???��?��?�n��?��??Ď??��???��?�?�q?�q??���i
+            var ox = a * k; // �\�D��???��?��?�@֬??
+            var oy = b * k; // ???ٞ??��?��?�@֬??
+            // ��?��?????��???��?��?�n��?��??Ď??��???��?�?�q?�q??���i
             ctx.moveTo(x - a, y);
             ctx.bezierCurveTo(x - a, y - oy, x - ox, y - b, x, y - b);
             ctx.bezierCurveTo(x + ox, y - b, x + a, y - oy, x + a, y);
@@ -34351,7 +34351,7 @@
                 symbolStyle.fill = innerColor || '#fff';
             }
             else {
-                // FIXME ?��???�Ͼ�ˎ?ݰ��??�a??�C????�X��?�G˯?? onlyStroke ?
+                // FIXME ?��???�Ͼ�ˎ?ݰ��??�a??�C????�X��?�G˯?? onlyStroke ?
                 symbolStyle.fill && (symbolStyle.fill = color);
                 symbolStyle.stroke && (symbolStyle.stroke = color);
             }
@@ -38895,8 +38895,8 @@
      * under the License.
      */
 
-// Grid ???????�B?????�}��???��??�b?�n֫?�_?????
-// ??���???��?��?��? Cartesian2D ��?ɯ?
+// Grid ???????�B?????�}��???��??�b?�n֫?�_?????
+// ??���???��?��?��? Cartesian2D ��?ɯ?
 
     ComponentModel.extend({
 
@@ -41209,8 +41209,8 @@
         },
 
         defaultOption: {
-            zlevel: 0,                  // ��?Ē��???
-            z: 2,                       // �D?Ē��???
+            zlevel: 0,                  // ��?Ē��???
+            z: 2,                       // �D?Ē��???
             coordinateSystem: 'cartesian2d',
             legendHoverLink: true,
             // stack: null
@@ -41219,9 +41219,9 @@
             // xAxisIndex: 0,
             // yAxisIndex: 0,
 
-            // ??�q�?�_??���p0
+            // ??�q�?�_??���p0
             barMinHeight: 0,
-            // ??�q�f?�_?�p0�?��?�z��??????�}˽????Ԯ?��?��????
+            // ??�q�f?�_?�p0�?��?�z��??????�}˽????Ԯ?��?��????
             barMinAngle: 0,
             // cursor: null,
 
@@ -41231,11 +41231,11 @@
             progressiveChunkMode: 'mod',
 
             // barMaxWidth: null,
-            // ˎ?ݰ��????�_?
+            // ˎ?ݰ��????�_?
             // barWidth: null,
-            // ?��?�B?���I?ˎ?ݰ��p?Թ�ͽW��??30%�?????��???
+            // ?��?�B?���I?ˎ?ݰ��p?Թ�ͽW��??30%�?????��???
             // barGap: '30%',
-            // �z��???ٞ?Թ���f?���I?ˎ?ݰ��p�z��???�B???20%�?????��???
+            // �z��???ٞ?Թ���f?���I?ˎ?ݰ��p�z��???�B???20%�?????��???
             // barCategoryGap: '20%',
             // label: {
             //      show: false
@@ -42062,24 +42062,24 @@
             legendHoverLink: true,
 
             hoverAnimation: true,
-            // ˎ?ݰ��???��?��?
+            // ˎ?ݰ��???��?��?
             center: ['50%', '50%'],
             radius: [0, '75%'],
-            // ˎ?ݰ��e?��??
+            // ˎ?ݰ��e?��??
             clockwise: true,
             startAngle: 90,
-            // ??�q�f?�_??���p0
+            // ??�q�f?�_??���p0
             minAngle: 0,
-            // ??��??��???��?�@֬??
+            // ??��??��???��?�@֬??
             selectedOffset: 10,
-            // ʒ?�D????��?�@֬??
+            // ʒ?�D????��?�@֬??
             hoverOffset: 10,
 
             // If use strategy to avoid label overlapping
             avoidLabelOverlap: true,
-            // ????���J??ˎ?ݰ��?�f???????single�?multiple
+            // ????���J??ˎ?ݰ��?�f???????single�?multiple
             // selectedMode: false,
-            // ??��??��????ҽ?�ɩ��J??'radius'�???�l?�? | 'area'�??�ا��?
+            // ??��??��????ҽ?�ɩ��J??'radius'�???�l?�? | 'area'�??�ا��?
             // roseType: null,
 
             percentPrecision: 2,
@@ -42095,20 +42095,20 @@
                 show: true,
                 // 'outer', 'inside', 'center'
                 position: 'outer'
-                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
-                // ˎ?ݰ����??????????��???�r??TEXTSTYLE
-                // distance: �Z?position��?inner?��????�?��?label�G?��??ҽ??�b???�f?��˽??????�l?(???��?�ʜp??��???�l???)??�U?��?�}��??
+                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
+                // ˎ?ݰ����??????????��???�r??TEXTSTYLE
+                // distance: �Z?position��?inner?��????�?��?label�G?��??ҽ??�b???�f?��˽??????�l?(???��?�ʜp??��???�l???)??�U?��?�}��??
             },
             // Enabled when label.normal.position is 'outer'
             labelLine: {
                 show: true,
-                // �J?�z���i�ݤ�?��???�e??�K��?ˮ��
+                // �J?�z���i�ݤ�?��???�e??�K��?ˮ��
                 length: 15,
-                // �J?�z���i�ݤ�?��???�e??�K��?ˮ��
+                // �J?�z���i�ݤ�?��???�e??�K��?ˮ��
                 length2: 15,
                 smooth: false,
                 lineStyle: {
-                    // color: ??�J?,
+                    // color: ??�J?,
                     width: 1,
                     type: 'solid'
                 }
@@ -43012,7 +43012,7 @@
                     return;
                 }
 
-                // FIXME ?��? 2.0 �G??? roseType ?? area ???��????????��?
+                // FIXME ?��? 2.0 �G??? roseType ?? area ???��????????��?
                 if (roseType !== 'area') {
                     angle = (sum === 0 && stillShowZeroSum)
                         ? unitRadian : (value * unitRadian);
@@ -43229,9 +43229,9 @@
             // Geo coordinate system
             // geoIndex: 0,
 
-            // symbol: null,        // ?�Ͼ��z��??
-            symbolSize: 10,          // ?�Ͼ��ɧ�?????�W�w???�l?�????��?�Z??�Ͼ��݈�?��?????ټ��???��?�_?�psymbolSize * 2
-            // symbolRotate: null,  // ?�Ͼ�??��????
+            // symbol: null,        // ?�Ͼ��z��??
+            symbolSize: 10,          // ?�Ͼ��ɧ�?????�W�w???�l?�????��?�Z??�Ͼ��݈�?��?????ټ��???��?�_?�psymbolSize * 2
+            // symbolRotate: null,  // ?�Ͼ�??��????
 
             large: false,
             // Available when large is true
@@ -43241,14 +43241,14 @@
             // label: {
             // show: false
             // distance: 5,
-            // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
-            // position: ˎ?ݰ��????�_?�?�\�D����?��?��?'top'�????�D?��?��?'right'�?????��?
+            // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
+            // position: ˎ?ݰ��????�_?�?�\�D����?��?��?'top'�????�D?��?��?'right'�?????��?
             //           'inside'|'left'|'right'|'top'|'bottom'
-            // ˎ?ݰ����??????????��???�r??TEXTSTYLE
+            // ˎ?ݰ����??????????��???�r??TEXTSTYLE
             // },
             itemStyle: {
                 opacity: 0.8
-                // color: ??�J?
+                // color: ??�J?
             }
 
             // progressive: null
@@ -44783,7 +44783,7 @@
      * under the License.
      */
 
-// Fix for ??Ǽ�Q?�X?
+// Fix for ??Ǽ�Q?�X?
 
     var geoCoord = [126, 25];
 
@@ -44817,7 +44817,7 @@
     var fixNanhai = function (mapType, regions) {
         if (mapType === 'china') {
             regions.push(new Region(
-                '??Ǽ�Q?�X?',
+                '??Ǽ�Q?�X?',
                 map(points$1, function (exterior) {
                     return {
                         type: 'polygon',
@@ -44848,13 +44848,13 @@
      */
 
     var coordsOffsetMap = {
-        '??Ǽ�Q?�X?': [32, 80],
+        '??Ǽ�Q?�X?': [32, 80],
         // ????
-        '�B��?': [0, -10],
-        'ޯ?��?': [10, 5],
-        '�}�f??': [-10, 10],
-        //'??�D?': [-10, 0],
-        '��?Ǭ': [5, 5]
+        '�B��?': [0, -10],
+        'ޯ?��?': [10, 5],
+        '�}�f??': [-10, 10],
+        //'??�D?': [-10, 0],
+        '��?Ǭ': [5, 5]
     };
 
     var fixTextCoord = function (mapType, region) {
@@ -44923,7 +44923,7 @@
      * under the License.
      */
 
-// Fix for ??ʚ��?
+// Fix for ??ʚ��?
 
 // var Region = require('../Region');
 // var zrUtil = require('zrender/src/core/util');
@@ -44941,7 +44941,7 @@
     ];
 
     var fixDiaoyuIsland = function (mapType, region) {
-        if (mapType === 'china' && region.name === '?�˽�') {
+        if (mapType === 'china' && region.name === '?�˽�') {
             region.geometries.push({
                 type: 'polygon',
                 exterior: points$2[0]
@@ -45455,9 +45455,9 @@
         },
 
         defaultOption: {
-            // ��?Ē��???
+            // ��?Ē��???
             zlevel: 0,
-            // �D?Ē��???
+            // �D?Ē��???
             z: 2,
 
             coordinateSystem: 'geo',
@@ -45490,19 +45490,19 @@
             // layoutSize: 100
 
 
-            // ?ҽ?��??�B��?��???ˎ?ݰ��????�?????����?
+            // ?ҽ?��??�B��?��???ˎ?ݰ��????�?????����?
             // 'sum' | 'average' | 'max' | 'min'
             // mapValueCalculation: 'sum',
-            // ?ҽ?��?ҽ?ȡ?��?Ď???�q??�����_?
+            // ?ҽ?��?ҽ?ȡ?��?Ď???�q??�����_?
             // mapValuePrecision: 0,
 
 
-            // ?ة��?��?�G??��??�r?�?�}��????�r???�q????��?�??��?�J????��????
+            // ?ة��?��?�G??��??�r?�?�}��????�r???�q????��?�??��?�J????��????
             showLegendSymbol: true,
-            // ????���J??ˎ?ݰ��?�f???????single�?multiple
+            // ????���J??ˎ?ݰ��?�f???????single�?multiple
             // selectedMode: false,
             dataRangeHoverLink: true,
-            // ???????��?��?��?����Q??
+            // ???????��?��?��?����Q??
             // roam: false,
 
             // Define left-top, right-bottom coords to control view
@@ -49816,7 +49816,7 @@
             leafDepth: null,                    // Nodes on depth from root are regarded as leaves.
                                                 // Count from zero (zero represents only view root).
             drillDownIcon: '??',                 // Use html character temporarily because it is complicated
-            // to align specialized icon. ?��?��?????�a??
+            // to align specialized icon. ?��?��?????�a??
 
             zoomToNodeRatio: 0.32 * 0.32,       // Be effective when using zoomToNode. Specify the proportion of the
                                                 // target node area in the view area.
@@ -50582,7 +50582,7 @@
             var containerGroup = this._containerGroup;
             if (!containerGroup) {
                 // FIXME
-                // ??��?��?containerGroup??�p�D?clip�?�G??????clip???���]�R??�W?????
+                // ??��?��?containerGroup??�p�D?clip�?�G??????clip???���]�R??�W?????
                 containerGroup = this._containerGroup = new Group$2();
                 this._initEvents(containerGroup);
                 this.group.add(containerGroup);
@@ -52418,7 +52418,7 @@
             seriesModel.setLayoutInfo(layoutInfo);
 
             // FIXME
-            // ????Ѻ??clip???�w????��?ecʒ?�W��??
+            // ????Ѻ??clip???�w????��?ecʒ?�W��??
             prunning(
                 treeRoot,
                 // Transform to base element coordinate system.
@@ -53327,7 +53327,7 @@
     };
 
     /**
-     * ?�\��
+     * ?�\��
      * @alias module:echarts/data/Graph.Edge
      * @param {module:echarts/data/Graph.Node} n1
      * @param {module:echarts/data/Graph.Node} n2
@@ -53336,13 +53336,13 @@
     function Edge(n1, n2, dataIndex) {
 
         /**
-         * ????1�?�T??????????��??�݈�?????
+         * ????1�?�T??????????��??�݈�?????
          * @type {module:echarts/data/Graph.Node}
          */
         this.node1 = n1;
 
         /**
-         * ????2�?�T??????????��??�ݘY????????
+         * ????2�?�T??????????��??�ݘY????????
          * @type {module:echarts/data/Graph.Node}
          */
         this.node2 = n2;
@@ -54481,7 +54481,7 @@
             }
         }
 
-        // Assume the segment is monotone�?Find root through Bisection method
+        // Assume the segment is monotone�?Find root through Bisection method
         // At most 32 iteration
         for (var i = 0; i < 32; i++) {
             // var prev = t - interval;
@@ -55953,50 +55953,50 @@
         defaultOption: {
             zlevel: 0,
             z: 2,
-            // ˎ?ݰ��???��?��?
+            // ˎ?ݰ��???��?��?
             center: ['50%', '50%'],
             legendHoverLink: true,
             radius: '75%',
             startAngle: 225,
             endAngle: -45,
             clockwise: true,
-            // ??�q???
+            // ??�q???
             min: 0,
-            // ??�ɧ�??
+            // ??�ɧ�??
             max: 100,
-            // ???��??��?ˎ?ݰ��p10
+            // ???��??��?ˎ?ݰ��p10
             splitNumber: 10,
-            // ????�����i
+            // ????�����i
             axisLine: {
-                // ˎ?ݰ��?ة���?��???show???��?ة����???
+                // ˎ?ݰ��?ة���?��???show???��?ة����???
                 show: true,
-                lineStyle: {       // ��???lineStyle???���i?�R?��??
+                lineStyle: {       // ��???lineStyle???���i?�R?��??
                     color: [[0.2, '#91c7ae'], [0.8, '#63869e'], [1, '#c23531']],
                     width: 30
                 }
             },
             // ????Ē?
             splitLine: {
-                // ˎ?ݰ��?ة���?��???show???��?ة����???
+                // ˎ?ݰ��?ة���?��???show???��?ة����???
                 show: true,
-                // ��???length???���i??
+                // ��???length???���i??
                 length: 30,
-                // ��???lineStyle�?�r??lineStyle�????���i?�R?��??
+                // ��???lineStyle�?�r??lineStyle�????���i?�R?��??
                 lineStyle: {
                     color: '#eee',
                     width: 2,
                     type: 'solid'
                 }
             },
-            // ????���D????ݰ?
+            // ????���D????ݰ?
             axisTick: {
-                // ��???show???��?ة����????ˎ?ݰ��??ة��
+                // ��???show???��?ة����????ˎ?ݰ��??ة��
                 show: true,
-                // �U�b?splitĎ???��?�q?�K?
+                // �U�b?splitĎ???��?�q?�K?
                 splitNumber: 5,
-                // ��???length???���i??
+                // ��???length???���i??
                 length: 8,
-                // ��???lineStyle???���i?�R?��??
+                // ��???lineStyle???���i?�R?��??
                 lineStyle: {
                     color: '#eee',
                     width: 1,
@@ -56019,9 +56019,9 @@
             },
             title: {
                 show: true,
-                // x, y�???�G?px
+                // x, y�???�G?px
                 offsetCenter: [0, '-40%'],
-                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
+                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
                 color: '#333',
                 fontSize: 15
             },
@@ -56033,10 +56033,10 @@
                 width: 100,
                 height: null, // self-adaption
                 padding: [5, 10],
-                // x, y�???�G?px
+                // x, y�???�G?px
                 offsetCenter: [0, '40%'],
                 // formatter: null,
-                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
+                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
                 color: 'auto',
                 fontSize: 30
             }
@@ -56613,8 +56613,8 @@
         },
 
         defaultOption: {
-            zlevel: 0,                  // ��?Ē��???
-            z: 2,                       // �D?Ē��???
+            zlevel: 0,                  // ��?Ē��???
+            z: 2,                       // �D?Ē��???
             legendHoverLink: true,
             left: 80,
             top: 60,
@@ -56623,7 +56623,7 @@
             // width: {totalWidth} - left - right,
             // height: {totalHeight} - top - bottom,
 
-            // ˎ?ݰ��??��????�q???�ɧ�??
+            // ˎ?ݰ��??��????�q???�ɧ�??
             // min: 0,
             // max: 100,
             minSize: '0%',
@@ -56634,19 +56634,19 @@
             label: {
                 show: true,
                 position: 'outer'
-                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
+                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
             },
             labelLine: {
                 show: true,
                 length: 20,
                 lineStyle: {
-                    // color: ??�J?,
+                    // color: ??�J?,
                     width: 1,
                     type: 'solid'
                 }
             },
             itemStyle: {
-                // color: ??�J?,
+                // color: ??�J?,
                 borderColor: '#fff',
                 borderWidth: 1
             },
@@ -57643,10 +57643,10 @@
                 translate(transform, transform, position);
 
                 // TODO
-                // tick��???��?׭�R????
+                // tick��???��?׭�R????
 
                 // TODO
-                // ?��??axis order ?ٞ?? dimensions�n��????
+                // ?��??axis order ?ٞ?? dimensions�n��????
 
                 this._axesLayout[dim] = {
                     position: position,
@@ -59709,8 +59709,8 @@
         },
 
         defaultOption: {
-            zlevel: 0,                  // ��?Ē��???
-            z: 2,                       // �D?Ē��???
+            zlevel: 0,                  // ��?Ē��???
+            z: 2,                       // �D?Ē��???
 
             coordinateSystem: 'parallel',
             parallelIndex: 0,
@@ -60027,7 +60027,7 @@
 // }
 
 // FIXME
-// ?????��??
+// ?????��??
     function isEmptyValue(val, axisType) {
         return axisType === 'category'
             ? val == null
@@ -61517,7 +61517,7 @@
             var addOrdinal;
 
             // FIXME
-            // ?????��?�B݋
+            // ?????��?�B݋
 
             if (xAxisType === 'category') {
                 option.layout = 'horizontal';
@@ -61651,8 +61651,8 @@
          * @override
          */
         defaultOption: {
-            zlevel: 0,                  // ��?Ē��???
-            z: 2,                       // �D?Ē��???
+            zlevel: 0,                  // ��?Ē��???
+            z: 2,                       // �D?Ē��???
             coordinateSystem: 'cartesian2d',
             legendHoverLink: true,
 
@@ -62183,11 +62183,11 @@
             layout: null, // 'horizontal' or 'vertical'
 
             itemStyle: {
-                color: '#c23531', // ?���i positive
-                color0: '#314656', // ?���i negative     '#c23531', '#314656'
+                color: '#c23531', // ?���i positive
+                color0: '#314656', // ?���i negative     '#c23531', '#314656'
                 borderWidth: 1,
                 // FIXME
-                // ec2�ݩY��??????lineStyle.color ?? lineStyle.color0
+                // ec2�ݩY��??????lineStyle.color ?? lineStyle.color0
                 borderColor: '#c23531',
                 borderColor0: '#314656'
             },
@@ -62951,9 +62951,9 @@
             // Geo coordinate system
             // geoIndex: 0,
 
-            // symbol: null,        // ?�Ͼ��z��??
-            symbolSize: 10          // ?�Ͼ��ɧ�?????�W�w???�l?�????��?�Z??�Ͼ��݈�?��?????ټ��???��?�_?�psymbolSize * 2
-            // symbolRotate: null,  // ?�Ͼ�??��????
+            // symbol: null,        // ?�Ͼ��z��??
+            symbolSize: 10          // ?�Ͼ��ɧ�?????�W�w???�l?�????��?�Z??�Ͼ��݈�?��?????ټ��???��?�_?�psymbolSize * 2
+            // symbolRotate: null,  // ?�Ͼ�??��????
 
             // large: false,
             // Available when large is true
@@ -63603,7 +63603,7 @@
                 show: false,
                 position: 'end'
                 // distance: 5,
-                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
+                // formatter: ??����?????��???????Tooltip.formatter�?��?????�J?�֥�??ݭ?
             },
 
             lineStyle: {
@@ -69503,13 +69503,13 @@
             zlevel: 0,
             z: 2,
 
-            // ˎ?ݰ��???��?��?
+            // ˎ?ݰ��???��?��?
             center: ['50%', '50%'],
             radius: [0, '75%'],
-            // ˎ?ݰ��e?��??
+            // ˎ?ݰ��e?��??
             clockwise: true,
             startAngle: 90,
-            // ??�q�f?�_??���p0
+            // ??�q�f?�_??���p0
             minAngle: 0,
 
             percentPrecision: 2,
@@ -72361,13 +72361,13 @@
         },
 
         defaultOption: {
-            // ��?Ē��???
+            // ��?Ē��???
             zlevel: 0,
-            // �D?Ē��???
+            // �D?Ē��???
             z: 4,
             show: true,
 
-            // ��?��??��???ˎ?ݰ��p�\�D����?��?�?????����?
+            // ��?��??��???ˎ?ݰ��p�\�D����?��?�?????����?
             // 'horizontal' | 'vertical'
             orient: 'horizontal',
 
@@ -72377,44 +72377,44 @@
             top: 0,
             // bottom: null,
 
-            // �\�D���z��?
+            // �\�D���z��?
             // 'auto' | 'left' | 'right'
-            // ˎ?ݰ��p 'auto', ?��?? x ??�G?��??��????�D�z��?�C???��?�@?
+            // ˎ?ݰ��p 'auto', ?��?? x ??�G?��??��????�D�z��?�C???��?�@?
             align: 'auto',
 
             backgroundColor: 'rgba(0,0,0,0)',
-            // ?��?ݹ��?�G???
+            // ?��?ݹ��?�G???
             borderColor: '#ccc',
             borderRadius: 0,
-            // ?��?ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
+            // ?��?ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
             borderWidth: 0,
-            // ?��???ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
-            // ?????��??????�W?��??��?��?���f?�???css
+            // ?��???ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
+            // ?????��??????�W?��??��?��?���f?�???css
             padding: 5,
-            // ??��?item��??��???�??�???�G?px�?ˎ?ݰ��p10�?
-            // ��???��?��??�y�p�\�D��?�??�?Ē��??��?��??�y�pĒ��???�??
+            // ??��?item��??��???�??�???�G?px�?ˎ?ݰ��p10�?
+            // ��???��?��??�y�p�\�D��?�??�?Ē��??��?��??�y�pĒ��???�??
             itemGap: 10,
-            // ?��??�ϾͽW��
+            // ?��??�ϾͽW��
             itemWidth: 25,
-            // ?��??�Ͼ�ʒ?�_?
+            // ?��??�Ͼ�ʒ?�_?
             itemHeight: 14,
 
-            // ?��??�f???��????�G???
+            // ?��??�f???��????�G???
             inactiveColor: '#ccc',
 
             textStyle: {
-                // ?��???�_?�G???
+                // ?��???�_?�G???
                 color: '#333'
             },
             // formatter: '',
-            // ????���J??ˎ?ݰ��????��?�J???
+            // ????���J??ˎ?ݰ��????��?�J???
             selectedMode: true,
-            // ??��??ݰ��??��??��??�???????LEGEND.SELECTED�D?���???????��??ʮ??
+            // ??��??ݰ��??��??��??�???????LEGEND.SELECTED�D?���???????��??ʮ??
             // selected: null,
-            // ?��???�W��?�r??legend.data�??��?��??�^?�n������??��?item
+            // ?��???�W��?�r??legend.data�??��?��??�^?�n������??��?item
             // data: [],
 
-            // Tooltip ?��?�f??��?
+            // Tooltip ?��?�f??��?
             tooltip: {
                 show: false
             }
@@ -73674,7 +73674,7 @@
 
             show: true,
 
-            // tooltip��˽???�W?
+            // tooltip��˽???�W?
             showContent: true,
 
             // 'trigger' only works on coordinate system.
@@ -73693,57 +73693,57 @@
             // 'html': use html for tooltip
             // 'richText': use canvas, svg, and etc. for tooltip
 
-            // �G?��? {Array} | {Function}
+            // �G?��? {Array} | {Function}
             // position: null
             // Consider triggered from axisPointer handle, verticalAlign should be 'middle'
             // align: null,
             // verticalAlign: null,
 
-            // ????��?? content ?? viewRect ��???ˎ?ݰ? false ??�p�D??��?���????????
+            // ????��?? content ?? viewRect ��???ˎ?ݰ? false ??�p�D??��?���????????
             confine: false,
 
-            // ??�W��?��?????{string}�?Template�? �� {Function}
+            // ??�W��?��?????{string}�?Template�? �� {Function}
             // formatter: null
 
             showDelay: 0,
 
-            // ???�|��?�???�G?ms
+            // ???�|��?�???�G?ms
             hideDelay: 100,
 
-            // ???��??��?��?��???�G?s
+            // ???��??��?��?��???�G?s
             transitionDuration: 0.4,
 
             enterable: false,
 
-            // ??����??????�{?ˎ?ݰ��p????�_?�p0.7??ˎ???
+            // ??����??????�{?ˎ?ݰ��p????�_?�p0.7??ˎ???
             backgroundColor: 'rgba(50,50,50,0.7)',
 
-            // ??���Ƚ���?�G???
+            // ??���Ƚ���?�G???
             borderColor: '#333',
 
-            // ??���Ƚ���???��?�???�G?px�?ˎ?ݰ��p4
+            // ??���Ƚ���???��?�???�G?px�?ˎ?ݰ��p4
             borderRadius: 4,
 
-            // ??���Ƚ���?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
+            // ??���Ƚ���?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
             borderWidth: 0,
 
-            // ??����??ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
-            // ?????��??????�W?��??��?��?���f?�???css
+            // ??����??ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
+            // ?????��??????�W?��??��?��?���f?�???css
             padding: 5,
 
             // Extra css text
             extraCssText: '',
 
-            // ????��ٞ??����???????���B��??????
+            // ????��ٞ??����???????���B��??????
             axisPointer: {
-                // ˎ?ݰ��p?���i
-                // ????����?'line' | 'shadow' | 'cross'
+                // ˎ?ݰ��p?���i
+                // ????����?'line' | 'shadow' | 'cross'
                 type: 'line',
 
-                // type ��? line ???��??????�???�W? tooltip line ??????����?????
+                // type ��? line ???��??????�???�W? tooltip line ??????����?????
                 // ???? 'x' | 'y' | 'angle' | 'radius' | 'auto'
-                // ˎ?ݰ? 'auto'�?��?????��??��? category ??����?�z��?????ҽ?ȡ݋�?�e??�Q?????�}˽?ˎ?ݰ��???? x ��?
-                // ??????�}˽?ˎ?ݰ��???? angle ��?
+                // ˎ?ݰ? 'auto'�?��?????��??��? category ??����?�z��?????ҽ?ȡ݋�?�e??�Q?????�}˽?ˎ?ݰ��???? x ��?
+                // ??????�}˽?ˎ?ݰ��???? angle ��?
                 axis: 'auto',
 
                 animation: 'auto',
@@ -76891,7 +76891,7 @@
             },
 
             itemStyle: {
-                // color: ??�J?,
+                // color: ??�J?,
                 borderWidth: 0.5,
                 borderColor: '#444',
                 color: '#eee'
@@ -78334,7 +78334,7 @@
             throttleDelay: 0,        // Unit: ms, 0 means every event will be triggered.
 
             // FIXME
-            // �r?ް?????
+            // �r?ް?????
             removeOnClick: true,
 
             z: 10000
@@ -79460,16 +79460,16 @@
             'Oct', 'Nov', 'Dec'
         ],
         CN: [
-            '��???', '�D???', '��???',
-            '????', '�D???', '????',
-            '��???', '????', '��???',
-            '????', '??��???', '??�D???'
+            '��???', '�D???', '��???',
+            '????', '�D???', '????',
+            '��???', '????', '��???',
+            '????', '??��???', '??�D???'
         ]
     };
 
     var WEEK_TEXT = {
         EN: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-        CN: ['??', '��?', '�D?', '��?', '??', '�D?', '??']
+        CN: ['??', '��?', '�D?', '��?', '??', '�D?', '??']
     };
 
     extendComponentView({
@@ -79975,54 +79975,54 @@
         layoutMode: {type: 'box', ignoreSize: true},
 
         defaultOption: {
-            // ��?Ē��???
+            // ��?Ē��???
             zlevel: 0,
-            // �D?Ē��???
+            // �D?Ē��???
             z: 6,
             show: true,
 
             text: '',
-            // �d??��?�f����
+            // �d??��?�f����
             // link: null,
-            // ��?????self | blank
+            // ��?????self | blank
             target: 'blank',
             subtext: '',
 
-            // �d??��?�f����
+            // �d??��?�f����
             // sublink: null,
-            // ��?????self | blank
+            // ��?????self | blank
             subtarget: 'blank',
 
-            // 'center' �� 'left' �� 'right'
-            // �� {number}�?x????�???�G?px�?
+            // 'center' �� 'left' �� 'right'
+            // �� {number}�?x????�???�G?px�?
             left: 0,
-            // 'top' �� 'bottom' �� 'center'
-            // �� {number}�?y????�???�G?px�?
+            // 'top' �� 'bottom' �� 'center'
+            // �� {number}�?y????�???�G?px�?
             top: 0,
 
-            // �\�D���z��?
+            // �\�D���z��?
             // 'auto' | 'left' | 'right' | 'center'
-            // ˎ?ݰ��?��?? left ??�G?��??��????�D�z��?�C???��?�@?
+            // ˎ?ݰ��?��?? left ??�G?��??��????�D�z��?�C???��?�@?
             // textAlign: null
             //
-            // ???�D?�@?
+            // ???�D?�@?
             // 'auto' | 'top' | 'bottom' | 'middle'
-            // ˎ?ݰ��?��?? top �G?��??��?????�z��?�C????�z��?
+            // ˎ?ݰ��?��?? top �G?��??��?????�z��?�C????�z��?
             // textBaseline: null
 
             backgroundColor: 'rgba(0,0,0,0)',
 
-            // ??�G?ݹ��?�G???
+            // ??�G?ݹ��?�G???
             borderColor: '#ccc',
 
-            // ??�G?ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
+            // ??�G?ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
             borderWidth: 0,
 
-            // ??�G???ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
-            // ?????��??????�W?��??��?��?���f?�???css
+            // ??�G???ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
+            // ?????��??????�W?��??��?��?���f?�???css
             padding: 5,
 
-            // ����????�G?Ē��???�??�???�G?px�?ˎ?ݰ��p10�?
+            // ����????�G?Ē��???�??�???�G?px�?ˎ?ݰ��p10�?
             itemGap: 10,
             textStyle: {
                 fontSize: 18,
@@ -81145,8 +81145,8 @@
 
             if (autoAxisIndex) {
                 // FIXME
-                // �C??????��?ec2????�b?�?�]�R??�W?xAxisIndex??yAxisIndex?��??scatter?????ҽ?ȡ݋???ԮЩ??dataZoom???�n?�?
-                // �G????????????��?Grid.js#getScaleByOption?��?��???????time�?log��?axis type�?�?
+                // �C??????��?ec2????�b?�?�]�R??�W?xAxisIndex??yAxisIndex?��??scatter?????ҽ?ȡ݋???ԮЩ??dataZoom???�n?�?
+                // �G????????????��?Grid.js#getScaleByOption?��?��???????time�?log��?axis type�?�?
 
                 // If both dataZoom.xAxisIndex and dataZoom.yAxisIndex is not specified,
                 // dataZoom component auto adopts series that reference to
@@ -81206,8 +81206,8 @@
          */
         _isSeriesHasAllAxesTypeOf: function (seriesModel, axisType) {
             // FIXME
-            // ??��?series??xAxisIndex??yAxisIndex?��????????��????
-            // ��?�T?series.type === scatter?��??
+            // ??��?series??xAxisIndex??yAxisIndex?��????????��????
+            // ��?�T?series.type === scatter?��??
 
             var is = true;
             eachAxisDim(function (dimNames) {
@@ -81928,7 +81928,7 @@
                 // Should consider axis.min/axis.max when drawing dataShadow.
 
                 // FIXME
-                // �_?�r����???��???����?��???�C?????list??�C?��?����?��???
+                // �_?�r����???��???����?��???�C?????list??�C?��?����?��???
                 var isEmpty = value == null || isNaN(value) || value === '';
                 // See #4235.
                 var otherCoord = isEmpty
@@ -82205,7 +82205,7 @@
             var labelTexts = ['', ''];
 
             // FIXME
-            // date??�?????formatter�?autoformatter�?ec2 date.getAutoFormatter�?
+            // date??�?????formatter�?autoformatter�?ec2 date.getAutoFormatter�?
             if (dataZoomModel.get('showDetail')) {
                 var axisProxy = dataZoomModel.findRepresentativeAxisProxy();
 
@@ -82392,7 +82392,7 @@
 
     function getOtherDim(thisDim) {
         // FIXME
-        // �C?��??֫???getOtherAxis??��??��?�G???????????????�N?
+        // �C?��??֫???getOtherAxis??��??��?�G???????????????�N?
         var map$$1 = {x: 'y', y: 'x', radius: 'angle', angle: 'radius'};
         return map$$1[thisDim];
     }
@@ -83451,31 +83451,31 @@
                                     // 'colorLightness', 'colorAlpha',
                                     // 'symbol', 'symbolSize'
 
-            left: 0,                // 'center' �� 'left' �� 'right' �� {number} (px)
+            left: 0,                // 'center' �� 'left' �� 'right' �� {number} (px)
             right: null,            // The same as left.
-            top: null,              // 'top' �� 'bottom' �� 'center' �� {number} (px)
+            top: null,              // 'top' �� 'bottom' �� 'center' �� {number} (px)
             bottom: 0,              // The same as top.
 
             itemWidth: null,
             itemHeight: null,
             inverse: false,
-            orient: 'vertical',        // 'horizontal' �� 'vertical'
+            orient: 'vertical',        // 'horizontal' �� 'vertical'
 
             backgroundColor: 'rgba(0,0,0,0)',
-            borderColor: '#ccc',       // ?��??ݹ��?�G???
+            borderColor: '#ccc',       // ?��??ݹ��?�G???
             contentColor: '#5793f3',
             inactiveColor: '#aaa',
-            borderWidth: 0,            // ?��??ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
-            padding: 5,                // ?��????ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
-            // ?????��??????�W?��??��?��?���f?�???css
+            borderWidth: 0,            // ?��??ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
+            padding: 5,                // ?��????ݹ��?�???�G?px�?ˎ?ݰ��???��????ݹ��?��?5�?
+            // ?????��??????�W?��??��?��?���f?�???css
             textGap: 10,               //
-            precision: 0,              // �q??�����_??ˎ?ݰ��p0�???�q??��??
-            color: null,               //�G??�{?deprecated�??��?ec2�?�n��????pieces�?��???�D?inRange/outOfRange�?
+            precision: 0,              // �q??�����_??ˎ?ݰ��p0�???�q??��??
+            color: null,               //�G??�{?deprecated�??��?ec2�?�n��????pieces�?��???�D?inRange/outOfRange�?
 
             formatter: null,
-            text: null,                // ?????�T?['ʒ?', '�G?']�??��?ec2�?text[0]�z��?ʒ??�N?text[1]�z��?�G???
+            text: null,                // ?????�T?['ʒ?', '�G?']�??��?ec2�?text[0]�z��?ʒ??�N?text[1]�z��?�G???
             textStyle: {
-                color: '#333'          // ?��????�_?�G???
+                color: '#333'          // ?��????�_?�G???
             }
         },
 
@@ -85750,8 +85750,8 @@
         categories: function () {
             var thisOption = this.option;
             each$1(thisOption.categories, function (cate) {
-                // FIXME category��Q?��?�G˯??pieceList�?�G???visualMapping�ݩY???��??pieceList??
-                // ?????��??��??
+                // FIXME category��Q?��?�G˯??pieceList�?�G???visualMapping�ݩY???��??pieceList??
+                // ?????��??��??
                 this._pieceList.push({
                     text: this.formatValueText(cate, true),
                     value: cate
@@ -86707,7 +86707,7 @@
                 var itemModel = mpData.getItemModel(idx);
                 var symbolSize = itemModel.getShallow('symbolSize');
                 if (typeof symbolSize === 'function') {
-                    // FIXME �C???��??��? ECharts 2.x�?2.x �v?����??��???�Ҽ�?��???
+                    // FIXME �C???��??��? ECharts 2.x�?2.x �v?����??��???�Ҽ�?��???
                     symbolSize = symbolSize(
                         mpModel.getRawValue(idx), mpModel.getDataParams(idx)
                     );
@@ -87895,11 +87895,11 @@
          */
         defaultOption: {
 
-            zlevel: 0,                  // ��?Ē��???
-            z: 4,                       // �D?Ē��???
+            zlevel: 0,                  // ��?Ē��???
+            z: 4,                       // �D?Ē��???
             show: true,
 
-            axisType: 'time',  // ��Q?????��?���??�????? value, category
+            axisType: 'time',  // ��Q?????��?���??�????? value, category
 
             realtime: true,
 
@@ -87915,7 +87915,7 @@
             autoPlay: false,
             rewind: false,                     // ????????
             loop: true,
-            playInterval: 2000,                // ???��?��?�?�??�???�G?ms
+            playInterval: 2000,                // ???��?��?�?�??�???�G?ms
 
             currentIndex: 0,
 
@@ -88089,9 +88089,9 @@
          */
         defaultOption: {
 
-            backgroundColor: 'rgba(0,0,0,0)',   // ?��?�B݋???????
-            borderColor: '#ccc',               // ?��?�B݋ݹ��?�G???
-            borderWidth: 0,                    // ?��?�B݋ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
+            backgroundColor: 'rgba(0,0,0,0)',   // ?��?�B݋???????
+            borderColor: '#ccc',               // ?��?�B݋ݹ��?�G???
+            borderWidth: 0,                    // ?��?�B݋ݹ��?Ēˮ?�???�G?px�?ˎ?ݰ��p0�???ݹ��?�?
 
             orient: 'horizontal',              // 'vertical'
             inverse: false,
@@ -88108,7 +88108,7 @@
                 width: 2,
                 color: '#304654'
             },
-            label: {                            // ??????��?
+            label: {                            // ??????��?
                 position: 'auto',           // auto left right top bottom
                                             // When using number, label position is not
                                             // restricted by viewRect.
@@ -88117,7 +88117,7 @@
                 interval: 'auto',
                 rotate: 0,
                 // formatter: null,
-                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
+                // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
                 color: '#304654'
             },
             itemStyle: {
@@ -88157,7 +88157,7 @@
             emphasis: {
                 label: {
                     show: true,
-                    // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
+                    // ?�y?��??��?ݰ����??????????��???�r??TEXTSTYLE
                     color: '#c23531'
                 },
 
@@ -90757,7 +90757,7 @@
         };
 
         var getZIndex = function (zlevel, z, z2) {
-            // z ?????ȡ???�Ҝp [0, 1000]
+            // z ?????ȡ???�Ҝp [0, 1000]
             return (parseFloat(zlevel) || 0) * ZLEVEL_BASE + (parseFloat(z) || 0) * Z_BASE$1 + z2;
         };
 
@@ -91135,7 +91135,7 @@
                         var p = points$3[k];
 
                         m && applyTransform(p, p, m);
-                        // ��? round ��???����??
+                        // ��? round ��???����??
                         str.push(
                             round$4(p[0] * Z - Z2), comma, round$4(p[1] * Z - Z2),
                             k < nPoint - 1 ? comma : ''
@@ -91217,7 +91217,7 @@
          * IMAGE
          **************************************************/
         var isImage = function (img) {
-            // FIXME img instanceof Image �T??? img ???��??�e?�???��??�?IE8 ��?��??��??
+            // FIXME img instanceof Image �T??? img ???��??�e?�???��??�?IE8 ��?��??��??
             return (typeof img === 'object') && img.tagName && img.tagName.toUpperCase() === 'IMG';
             // return img instanceof Image;
         };
@@ -91284,7 +91284,7 @@
 
             var vmlEl = this._vmlEl;
             if (!vmlEl) {
-                // FIXME �G˯?? group ?? left, top ?Ѳ??? 0 ???��??�q��??�b??ة���D???
+                // FIXME �G˯?? group ?? left, top ?Ѳ??? 0 ???��??�q��??�b??ة���D???
                 // vmlEl = vmlCore.createNode('group');
                 vmlEl = doc.createElement('div');
                 initRootElStyle(vmlEl);
@@ -91331,7 +91331,7 @@
                     'Dy=', round$4(y * scaleY + m[5]));
 
                 vmlElStyle.padding = '0 ' + round$4(maxX) + 'px ' + round$4(maxY) + 'px 0';
-                // FIXME DXImageTransform ?? IE11 ???��?��Q?�^?��?ɯ϶???
+                // FIXME DXImageTransform ?? IE11 ???��?��Q?�^?��?ɯ϶???
                 vmlElStyle.filter = imageTransformPrefix + '.Matrix('
                     + transformFilter.join('') + ', SizingMethod=clip)';
 
@@ -91667,7 +91667,7 @@
                 this._textVmlEl = textVmlEl;
             }
             else {
-                // �C??????????? appendChild ׭?�r?�n��????????��?
+                // �C??????????? appendChild ׭?�r?�n��????????��?
                 skewEl = textVmlEl.firstChild;
                 pathEl = skewEl.nextSibling;
                 textPathEl = pathEl.nextSibling;
@@ -91846,7 +91846,7 @@
         },
 
         /**
-         * ?��??
+         * ?��??
          */
         refresh: function () {
 
@@ -91884,7 +91884,7 @@
                 // Detached from document at first time
                 // to avoid page refreshing too many times
 
-                // FIXME �T???�U�}��?��?? removeChild ???Ѳ?�zȡ?��?�D?�q???????�X��???????��?
+                // FIXME �T???�U�}��?��?? removeChild ???Ѳ?�zȡ?��?�D?�q???????�X��???????��?
                 this._vmlViewport.appendChild(vmlRoot);
                 this._firstPaint = false;
             }
@@ -92486,7 +92486,7 @@
     svgText.brush = function (el) {
         var style = el.style;
         if (style.text != null) {
-            // �J��?��?��? textPosition
+            // �J��?��?��? textPosition
             style.textPosition = [0, 0];
             svgTextDrawRectText(el, {
                 x: style.x || 0, y: style.y || 0,
@@ -93578,7 +93578,7 @@
     /**
      * @alias module:zrender/svg/Painter
      * @constructor
-     * @param {HTMLElement} root Ď??��???
+     * @param {HTMLElement} root Ď??��???
      * @param {module:zrender/Storage} storage
      * @param {Object} opts
      */
@@ -93832,14 +93832,14 @@
         },
 
         /**
-         * ????Ď??��?��??�W��
+         * ????Ď??��?��??�W��
          */
         getWidth: function () {
             return this._width;
         },
 
         /**
-         * ????Ď??��?��??ʒ?�_?
+         * ????Ď??��?��??ʒ?�_?
          */
         getHeight: function () {
             return this._height;
