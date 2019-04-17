@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>lovo</groupId>
-	<artifactId>SpringBootClientJ165</artifactId>
+	<artifactId>UploadSystem</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootClientJ165</name>
+	<name>UploadSystem</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
