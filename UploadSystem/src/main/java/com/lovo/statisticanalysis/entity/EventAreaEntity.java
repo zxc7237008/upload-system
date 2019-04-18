@@ -17,15 +17,15 @@ public class EventAreaEntity {
 	
 	@Id
 	@Column(length=32)
-	@GenericGenerator(name="areaUUid", strategy="org.hibernate.id.UUIDGenerator")
+	@GenericGenerator(name="areaUUid", strategy="uuid")
 	@GeneratedValue(generator="areaUUid")
-	private String areaId;
+	private String areaId;//地区主键id
 	
 	@Column(length=32)
-	private String areaName;
+	private String areaName;//地区名
 	
 	@OneToMany(mappedBy="eventArea")
-	private Set<FirstEventEntity> firstEvtSet;
+	private Set<FirstEventEntity> firstEvtSet;//事件初报集合
 
 	public String getAreaId() {
 		return areaId;
