@@ -291,9 +291,9 @@
             <div id="page-inner"> 
 			
 			  <div class="row">
-                    
+                   
                     <div class="col-md-4">
-                 
+                  <form th:action="@{shiftexchange}" method="post">
                        <div class="card">
                             <div class="card teal">
                                 <div class="card-content white-text">
@@ -306,7 +306,6 @@
                                         <i class="material-icons dp48">perm_identity</i>
                                     </div>
                                     <div class="input-field col s9">
-                                  
                                         <label for="user_name" class="">王龙</label>
                                     </div>
 
@@ -316,7 +315,7 @@
                                         <i class="material-icons dp48">lock_open</i>
                                     </div>
                                     <div class="input-field col s9">
-                                        <input id="password" type="password" class="validate"/>
+                                        <input id="password" type="password" class="validate"  name="password"/>
                                         <label for="password" class="">Password</label>
                                     </div>
                                 </div>
@@ -326,20 +325,26 @@
                                 </div>
                             </div>
                         </div>
+                          </form>
 					</div>
 						  <div class="col-md-7">
 						  <div class="card">
 						  <div class="card-content">
+						<form th:action="@{shiftexchangecontent}" method="post">
 						<div class="row">
-							<textarea name="content" style="width:100%;height:360px;overflow:scroll;resize:none;"></textarea>
+					
+							<textarea name="content"  id="content" style="width:100%;height:360px;overflow:scroll;resize:none;"></textarea>
+							<label for="content">日志</label>
 					<div style="float:right;">
 					<input type="submit" name="ButtonBaidu" value="提交" id="Button1" class="waves-effect waves-light btn" />
 					</div>
+					
 					</div>
+					</form>
 					</div>
 					</div>
 						</div>
-					  
+					 
 				</div>
 
 				<div class="card">
@@ -349,27 +354,18 @@
                                         <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 166px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作人</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 258px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">操作事件</font></font></th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 234px;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日期</font></font></th>
                                    </tr>
                                     </thead>
-                                    <tbody>
-      
-					<tr th:each="journal,trState:${pageBean.list}">
-                        <td th:text="${journal.name}"></td>
-                        <td th:text="${journal.incident}"></td>
-                        <td th:text="${journal.data}"></td>
-                    </tr>
+                                    <tbody class="table table-bordered table-hover">
                          </tbody>
                          </table>		
-							<input type="hidden" th:value="${pageBean.pageNum}" id="page"/>
-							<input type="hidden" th:value="${pageBean.pageAll}" id="pageAll"/>
-							<button type="button" class="btn btn-info" th:onclick="|javascript:changeFirst()|">首页</button>
-							<button type="button" class="btn btn-info" th:onclick="|javascript:changePre()|">上一页</button>
-							<button type="button" class="btn btn-info" th:onclick="|javascript:changeNext()|">下一页</button>
-							<button type="button" class="btn btn-info" th:onclick="|javascript:changeLast()|">尾页</button>
-							<input type="number" placeholder="请输入您要跳转的页面" th:max="${pageBean.pageAll}"/>
-						<div style="display: none;">
-							<form th:action="@{changePage}" method="post" id="changePage">
-								<input type="text" name="pageNum" id="pageNum"/>
-							</form>
-						</div>		
+                    <input type="button" th:value="首页" name="operation">
+                    <input type="button" th:value="上一页" name="operation">
+                    <input type="button" th:value="下一页" name="operation">
+                    <input type="button" th:value="尾页" name="operation">
+                   
+                    <input type="hidden" name="currPage">
+                    <input type="hidden" name="totalPage">
+                    
+                     <input type="hidden" name="quest">
 	
 					</div></div></div>
 				 <footer><p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p></footer>
@@ -405,35 +401,67 @@
 	<script th:src="@{static/assets/js/morris/morris.js}"> </script>
 	
     <!-- Custom Js -->
-    <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
+    <script th:src="@{static/assets/js/custom.js}"></script> 
 	<script>
-        function changeFirst() {
-        	$("#pageNum").val(0);
-            $("#changePage").submit();
-
-        }
-        function changePre() {
-            var page = parseInt($("#page").val());
-            if (page > 0 ){
-                page = page - 1;
+    $(function () {
+        var currpage=1;
+        $.getJSON("TableServlet",{currpage:currpage},filldate);
+        $(":button").click(function () {
+            var btn=this.value;
+            var currPage=$(":hidden[name=currPage]").val();
+            var totalPage=$(":hidden[name=totalPage]").val();
+            var quest=$("#quest").val();
+            currPage=parseInt(currPage);
+            totalPage=parseInt(totalPage);
+            if(btn=="首页"){
+                currPage=1;
+                $.getJSON("TableServlet",{currpage:currPage,quest:quest},filldate)
+            }else if(btn=="上一页"){
+                currPage-=1;
+                if(currPage<1){
+                    currPage=1;
+                }
+                $.getJSON("TableServlet",{currpage:currPage,quest:quest},filldate)
+            }else if(btn=="下一页"){
+                currPage+=1;
+                if(currPage>totalPage){
+                    currPage=totalPage;
+                }
+                $.getJSON("TableServlet",{currpage:currPage,quest:quest},filldate)
+            }else if(btn=="尾页"){
+                    currPage=totalPage;
+                $.getJSON("TableServlet",{currpage:currPage,quest:quest},filldate)
+            }else if(btn="查询"){
+                currPage=1;
+                $.getJSON("TableServlet",{currpage:currPage,quest:quest},filldate)
             }
-            $("#pageNum").val(page);
-            $("#changePage").submit();
-        }
-        function changeNext() {
-            var page = parseInt($("#page").val());
-            var pageAll = parseInt($("#pageAll").val());
-            if (page < pageAll - 1){
-                page = page + 1;
-            }
-            $("#pageNum").val(page);
-            $("#changePage").submit();
-        }
-        function changeLast() {
-            var pageAll = parseInt($("#pageAll").val());
-            $("#pageNum").val(pageAll - 1);
-            $("#changePage").submit();
-        }
+        })
+    })
+     function filldate(data){
+            var $table=$("table");
+            var $head=$("<tr><th>ID</th><th>操作人名字</th><th>操作事件</th><th>操作人时间</th></tr>")
+            $table.empty();
+            $table.append($head);
+            $.each(data.tableBeans, function (i,e) {
+                var name=e.id;
+                var name=e.name;
+                var incident=e.incident;
+                var sex=e.data;
+                var dataTr = "<tr><td>" + id
+                    + "</td><td>" + name
+                    + "</td><td>" + incident
+                    + "</td><td>" + data
+                    + "</td></tr>";
+                $table.append(dataTr);
+            });
+         var currPage = data.currPate;
+         var totalPage = data.totalPate;
+         //渲染 “第2页/共11页” 信息
+         $("span").html("第" + currPage + "页/共" + totalPage + "页");
+         //记录数据信息（当前页数和总页数）
+         $(":hidden[name=currPage]").val(currPage);
+         $(":hidden[name=totalPage]").val(totalPage);
+     }
     </script>
  
  
