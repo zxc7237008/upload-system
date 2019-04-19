@@ -145,6 +145,16 @@
 								
 							  </ul>
 							</div>
+							<div style="margin:5px;" class="btn-group">
+							  <button data-toggle="dropdown" class="btn btn-warning dropdown-toggle">事件状态 <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+								<li><a th:href="@{#}">未处理</a></li>
+								<li><a th:href="@{#}">处理中</a></li>
+								<li><a th:href="@{#}">结束</a></li>
+								<li class="divider"></li>
+								
+							  </ul>
+							</div>
 							
 				<div class="card">
                         <div class="card-action">
@@ -157,6 +167,9 @@
                                     <thead>
                                         <tr>
                                             <th class="center">事件名</th>
+                                            <th class="center">事件类型</th>
+                                            <th class="center">事件等级</th>
+                                            <th class="center">地区</th>
                                             <th class="center">报警人</th>
                                             <th class="center">报警人电话</th>
                                             <th class="center">事件状态</th>
@@ -166,6 +179,9 @@
                                     <tbody>
                                         <tr>
                                             <td class="center">杀人蜂事件</td>
+                                            <td class="center">动物</td>
+                                            <td class="center">3级</td>
+                                            <td class="center">卧龙岗</td>
                                             <td class="center">妞妞</td>
                                             <td class="center">13712938642</td>
                                             <td class="center">未上报</td>
@@ -178,6 +194,9 @@
                                         </tr>
                                         <tr>
                                             <td class="center">滇西偷窃事件</td>
+                                            <td class="center">盗窃</td>
+                                            <td class="center">3级</td>
+                                            <td class="center">春熙路</td>
                                             <td class="center">张三</td>
                                             <td class="center">12382736481</td>
                                             <td class="center">未上报</td>
@@ -190,6 +209,9 @@
                                         </tr>
                                         <tr>
                                             <td class="center">青羊区火灾事件</td>
+                                            <td class="center">火灾</td>
+                                            <td class="center">3级</td>
+                                            <td class="center">青羊区88号</td>
                                             <td class="center">王大妈</td>
                                             <td class="center">1242221214</td>
                                             <td class="center">已上报</td>
@@ -200,6 +222,9 @@
                                         </tr>
                                         <tr>
                                             <td class="center">朗沃学生罢课事件</td>
+                                            <td class="center">罢课事件</td>
+                                            <td class="center">3级</td>
+                                            <td class="center">共和村88号</td>
                                             <td class="center">胡一可</td>
                                             <td class="center">12378394738</td>
                                             <td class="center">已上报</td>
@@ -210,6 +235,9 @@
                                         </tr>
                                         <tr>
                                             <td class="center">四川大学学生游行事件</td>
+                                            <td class="center">游行事件</td>
+                                            <td class="center">2级</td>
+                                            <td class="center">四川大学</td>
                                             <td class="center">张治中</td>
                                             <td class="center">13789237328</td>
                                             <td class="center">已结束</td>
@@ -259,7 +287,7 @@
 	<script th:src="@{static/assets/js/Lightweight-Chart/jquery.chart.js}"></script>
 	
     <!-- Custom Js -->
-    <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
+    <script th:src="@{static/assets/js/custom.js}"></script> 
  
 
 </body>

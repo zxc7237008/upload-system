@@ -12,6 +12,14 @@ public interface IFirstEventService {
 	 * @return 对应状态事件信息的集合
 	 */
 	public List<FirstEventEntity> findFirstEventByEventState(int eventState);
+
 	
-	//public List<FirstEventEntity> findFirstEventLike
+	/**
+	 * 通过事件名称、事件等级、地区名称模糊查询相关的事件信息
+	 * @param typeName 事件名称
+	 * @param eventLevel 事件等级
+	 * @param areaName 地区名称
+	 * @return 相关的事件集合
+	 */
+//	public List<FirstEventEntity> findFirstEventslikeEventTypeEventLevelEventArea(String typeName,String eventLevel,String areaName);
 }

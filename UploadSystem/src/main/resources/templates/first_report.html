@@ -321,7 +321,7 @@
                              <div class="row">
                                  <div class="col-md-6">
                                      <label>事件等级</label>
-                                     <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">轻度</option><option value="25">中等</option><option value="50">严重</option></select>
+                                     <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="1">轻度</option><option value="2">中等</option><option value="3">严重</option></select>
                                  </div>
                                  <div class="input-field col s6">
                                      <input placeholder="上报人员" id="report_man" type="text" class="validate"/>
@@ -331,14 +331,14 @@
                              <div class="row">
                                  <div class="col-md-6">
                                      <label>发生区域</label>
-                                     <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">金牛区</option><option value="25">成华区</option><option value="50">锦江区</option></select>
+                                     <select name="event_area" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">金牛区</option><option value="25">成华区</option><option value="50" th:text="${a}">锦江区</option></select>
                                  </div>
                                  <div class="input-field col s6">
                                      <input placeholder="详细地址" id="detail_addr" type="text" class="validate"/>
                                      <label for="detail_addr" class="active">详细地址</label>
                                  </div>
                              </div>
-                             <div class="row" name="dynamic_block">
+                             <div class="row">
                                     <h1>动态模块</h1>
                              </div>
                              <div class="row">
@@ -350,7 +350,8 @@
 
                          </div>
 						 </div>
-									
+                    </div>
+             	 </div>
 				 <footer><p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p></footer>
 				</div>
              <!-- /. PAGE INNER  -->
@@ -358,9 +359,9 @@
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-            <!-- JS Scripts-->
+    <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script th:src="@{/static/assets/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{/static/jquery-2.1.4.js}"></script>
 	
 	<!-- Bootstrap Js -->
     <script th:src="@{/static/assets/js/bootstrap.min.js}"></script>
@@ -368,13 +369,25 @@
 	<script th:src="@{/static/assets/materialize/js/materialize.min.js}"></script>
 	
     <!-- Metis Menu Js -->
-		<script th:src="@{/static/assets/js/jquery.metisMenu.js}"></script> 
-    <!-- Custom Js -->
-    <script th:src="@{/static/assets/js/custom-scripts.js}"></script>
+    <script th:src="@{/static/assets/js/jquery.metisMenu.js}"></script>
 	
- </div>
-        </div>
-
+    <!-- Custom Js -->
+    <script th:src="@{/static/assets/js/custom.js}"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$.getJSON("/event/getArea",initData);
+    		
+    	});
+    	
+    	function initData(data){
+    		var area = $("[name=event_area]");
+    		area.empty();
+    		$.each(data,function(i,e){
+    			var $option = $("<option>"+e.areaName+"</option>");
+    		area.append($option);
+    		});
+    	}
+    </script>
 </body>
 
 </html>

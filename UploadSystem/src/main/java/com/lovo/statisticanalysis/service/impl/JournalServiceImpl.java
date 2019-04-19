@@ -1,4 +1,4 @@
-package com.lovo.statisticanalysis.service;
+package com.lovo.statisticanalysis.service.impl;
 
 import java.util.List;
 
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.lovo.statisticanalysis.dao.JournalDao;
 import com.lovo.statisticanalysis.entity.JournalEntity;
+import com.lovo.statisticanalysis.service.JournalService;
 
 
 @Service(value="journalService")

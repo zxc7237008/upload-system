@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
 	
-	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
+	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet"/>
 	<link rel="stylesheet" th:href="@{static/assets/materialize/css/materialize.min.css}" media="screen,projection" />
     <!-- Bootstrap Styles-->
     <link th:href="@{static/assets/css/bootstrap.css}" rel="stylesheet" />
@@ -18,7 +18,7 @@
     <link th:href="@{static/assets/css/custom-styles.css}" rel="stylesheet" />
     <!-- Google Fonts-->
     <link th:href='@{http://fonts.googleapis.com/css?family=Open+Sans}' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" th:href="@{static/assets/js/Lightweight-Chart/cssCharts.css}" /> 
+    <link rel="stylesheet" th:href="@{static/assets/js/Lightweight-Chart/cssCharts.css}"/>
 </head>
 <body>
     <div id="wrapper">
@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>上报系统</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>TRACK</strong></a>
 				
 		<div id="sideNav" class="waves-effect waves-dark" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -214,29 +214,30 @@
                             </a>
                         </li>
 </ul>  
+	   <!--/. NAV TOP  -->
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="home.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 主页面</a>
+                        <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 主界面</a>
                     </li>
                     <li>
-                        <a href="first_report.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 事件初报</a>
+                        <a href="ui-elements.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 事件初报</a>
                     </li>
 					<li>
-                        <a href="continue.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 事件续报</a>
+                        <a href="chart.html" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 事件续报</a>
                     </li>
                     <li>
-                        <a href="journal.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> 交接班</a>
+                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> 交班安排</a>
                     </li>
                     
                     <li>
-                        <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> 统计分析</a>
+                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> 统计分析</a>
                     </li>
                     <li>
-                        <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i> 空页面 </a>
+                        <a href="form.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i> 用户管理 </a>
                     </li>
 
 
@@ -279,11 +280,11 @@
         <div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                             	统计分析 
+                             Charts 
                         </h1>
 						<ol class="breadcrumb">
 					  <li><a href="#">主页</a></li>
-					  <li><a href="#">图表</a></li>
+					  <li><a href="#">地区</a></li>
 					  <li class="active">数据</li>
 					</ol> 
 									
@@ -296,7 +297,7 @@
                                <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            	柱状图
+                            Bar Chart
                         </div>
                         <div class="card-content">
                             <div id="morris-bar-chart"></div>
@@ -306,7 +307,7 @@
                       <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            	区域图
+                            Area Chart
                         </div>
                         <div class="card-content">
                             <div id="morris-area-chart"></div>
@@ -321,7 +322,7 @@
                                <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            	线性图
+                            Line Chart
                         </div>
                         <div class="card-content">
                             <div id="morris-line-chart"></div>
@@ -331,7 +332,7 @@
                       <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            	饼状图
+                            Donut Chart
                         </div>
                         <div class="card-content">                            
 							<div id="morris-donut-chart"></div>
@@ -363,7 +364,7 @@
     <script th:src="@{static/assets/js/morris/raphael-2.1.0.min.js}"></script>
     <script th:src="@{static/assets/js/morris/morris.js}"></script>
 	
-	<script th:src="@{static/echarts.js}"></script>
+	
 	<script th:src="@{static/assets/js/easypiechart.js}"></script>
 	<script th:src="@{static/assets/js/easypiechart-data.js}"></script>
 	
@@ -372,13 +373,7 @@
     <!-- Custom Js -->
     <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
  
-	<script type="text/javascript">
-	
-		$(function() {
-			alert(1)
-		});
-	
-	</script>
+
 </body>
 
 </html>

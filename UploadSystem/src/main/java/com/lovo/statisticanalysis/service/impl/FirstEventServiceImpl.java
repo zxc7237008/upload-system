@@ -15,11 +15,18 @@ public class FirstEventServiceImpl implements IFirstEventService{
 	@Autowired
 	private IFirstEventDao firstEventDao;
 
-	@Override
+	
 	public List<FirstEventEntity> findFirstEventByEventState(int eventState) {
 		
 		return firstEventDao.findFirstEventByEventState(eventState);
 	}
+
+	
+//	public List<FirstEventEntity> findFirstEventslikeEventTypeEventLevelEventArea(String typeName,
+//			String eventLevel, String areaName) {
+//		
+//		return firstEventDao.findFirstEventslikeEventTypeEventLevelEventArea(typeName, eventLevel, areaName);
+//	}
 	
 	
 }
