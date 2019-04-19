@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
 	
-	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{assets/materialize/css/materialize.min.css}" media="screen,projection" />
+	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
+	<link rel="stylesheet" th:href="@{static/assets/materialize/css/materialize.min.css}" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{static/assets/css/bootstrap.css}" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link th:href="@{assets/css/font-awesome.css}" rel="stylesheet" />
+    <link th:href="@{static/assets/css/font-awesome.css}" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link th:href="@{assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
+    <link th:href="@{static/assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link th:href="@{assets/css/custom-styles.css}" rel="stylesheet" />
+    <link th:href="@{static/assets/css/custom-styles.css}" rel="stylesheet" />
     <!-- Google Fonts-->
     <link th:href='@{http://fonts.googleapis.com/css?family=Open+Sans}' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" th:href="@{assets/js/Lightweight-Chart/cssCharts.css}"> 
+    <link rel="stylesheet" th:href="@{static/assets/js/Lightweight-Chart/cssCharts.css}" /> 
 </head>
 <body>
     <div id="wrapper">
@@ -169,7 +169,6 @@
 		</a>
 	</li>
 	<li class="divider"></li>
-	<li>
 </ul>   
 <ul id="dropdown4" class="dropdown-content dropdown-tasks w250">
   <li>
@@ -280,12 +279,12 @@
         <div id="page-wrapper">
 		  <div class="header"> 
                         <h1 class="page-header">
-                             Charts 
+                             	统计分析 
                         </h1>
 						<ol class="breadcrumb">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="#">Charts</a></li>
-					  <li class="active">Data</li>
+					  <li><a href="#">主页</a></li>
+					  <li><a href="#">图表</a></li>
+					  <li class="active">数据</li>
 					</ol> 
 									
 		</div>
@@ -297,7 +296,7 @@
                                <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            Bar Chart
+                            	柱状图
                         </div>
                         <div class="card-content">
                             <div id="morris-bar-chart"></div>
@@ -307,7 +306,7 @@
                       <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            Area Chart
+                            	区域图
                         </div>
                         <div class="card-content">
                             <div id="morris-area-chart"></div>
@@ -322,7 +321,7 @@
                                <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            Line Chart
+                            	线性图
                         </div>
                         <div class="card-content">
                             <div id="morris-line-chart"></div>
@@ -332,7 +331,7 @@
                       <div class="col-md-6 col-sm-12 col-xs-12">                     
                     <div class="card">
                         <div class="card-action">
-                            Donut Chart
+                            	饼状图
                         </div>
                         <div class="card-content">                            
 							<div id="morris-donut-chart"></div>
@@ -351,29 +350,35 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script th:src="@{assets/js/jquery-1.10.2.js}"></script>
+    <script th:src="@{static/assets/js/jquery-1.10.2.js}"></script>
 	
 	<!-- Bootstrap Js -->
-    <script th:src="@{assets/js/bootstrap.min.js}"></script>
+    <script th:src="@{static/assets/js/bootstrap.min.js}"></script>
 	
-	<script th:src="@{assets/materialize/js/materialize.min.js}"></script>
+	<script th:src="@{static/assets/materialize/js/materialize.min.js}"></script>
 	
     <!-- Metis Menu Js -->
-    <script th:src="@{assets/js/jquery.metisMenu.js}"></script>
+    <script th:src="@{static/assets/js/jquery.metisMenu.js}"></script>
     <!-- Morris Chart Js -->
-    <script th:src="@{assets/js/morris/raphael-2.1.0.min.js}"></script>
-    <script th:src="@{assets/js/morris/morris.js}"></script>
+    <script th:src="@{static/assets/js/morris/raphael-2.1.0.min.js}"></script>
+    <script th:src="@{static/assets/js/morris/morris.js}"></script>
 	
+	<script th:src="@{static/echarts.js}"></script>
+	<script th:src="@{static/assets/js/easypiechart.js}"></script>
+	<script th:src="@{static/assets/js/easypiechart-data.js}"></script>
 	
-	<script th:src="@{assets/js/easypiechart.js}"></script>
-	<script th:src="@{assets/js/easypiechart-data.js}"></script>
-	
-	 <script th:src="@{assets/js/Lightweight-Chart/jquery.chart.js}"></script>
+	 <script th:src="@{static/assets/js/Lightweight-Chart/jquery.chart.js}"></script>
 	
     <!-- Custom Js -->
-    <script th:src="@{assets/js/custom-scripts.js}"></script> 
+    <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
  
-
+	<script type="text/javascript">
+	
+		$(function() {
+			alert(1)
+		});
+	
+	</script>
 </body>
 
 </html>

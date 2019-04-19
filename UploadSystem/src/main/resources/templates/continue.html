@@ -137,24 +137,28 @@
                        <strong class="left" id="a">事件信息</strong>
 		
                    </div>
-                 <div class="card-content">
+                 <div class="card-content" th:each="event,trState:${eventList}">
                             
-                                事件名称：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+                                事件名称：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.eventName}"></label>
 		   <span style="width:200px;display:inline-block;"></span>
-			报警人：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
+			报警人：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.discoverer}"></label><br/><br/>
 								
-			事件类型：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+		<!--  	事件类型：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.eventType.typeName}"></label>
 			<span style="width:200px;display:inline-block;"></span>
-				报警人电话：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
+			-->
+			报警人电话：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.discovererTel}"></label><br/><br/>
 								
-								事件等级：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
-								<span style="width:200px;display:inline-block;"></span>
-								详细地址：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
-								
-								发生地区：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
-								<span style="width:200px;display:inline-block;"></span>
-								上报人员：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
-                         
+			事件等级：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.eventLevel}"></label>
+			<span style="width:200px;display:inline-block;"></span>
+			详细地址：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.detailAddr}"></label><br/><br/>
+		<!--	
+			发生地区：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.eventArea.areaName}"></label>
+			<span style="width:200px;display:inline-block;"></span>
+			Casualty-->
+			伤亡人数：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.Casualty}"></label>
+              <span style="width:200px;display:inline-block;"></span>
+			上报人员：<label for="password" class="" style="width:200px;font-size:13px;" th:text="${event.reporter}"></label>
+                    
                    </div>
             </div>	
 							
@@ -229,7 +233,8 @@
                         </div>
                     </div>	
 <!--添加续报-->
-							<div class="card">
+				<form action="saveContinue">
+			   				<div class="card">
                         <div class="card-action" id="c">
                             <strong class="left">添加续报</strong>
 							
@@ -238,29 +243,26 @@
                             <div class="table-responsive">
                            <div class="card-content">
                                 
-                                   
-                                    <div class="input-field col s9">
-                                       
-										
-							  <button data-toggle="dropdown" class="btn btn-danger dropdown-toggle">事件等级 <span class="caret"></span></button>
-							  <ul class="dropdown-menu">
-								<li><a th:href="@{#}">一级事件</a></li>
-								<li><a th:href="@{#}">二级事件</a></li>
-								<li><a th:href="@{#}">三级事件</a></li>
-								<li class="divider"></li>
-								
-							  </ul><br/>
+                               <div class="row">
+                                    <div class="col-md-1">
+                                     <label>事件等级</label>
+                                     <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm">
+                                     <option value="1">轻度</option>
+                                     <option value="2">中等</option>
+                                     <option value="3">严重</option>
+                                     </select>
                                     </div>
+								</div>
 
                                 
                                 <div class="row">
                                    
                                     <div class="input-field col s6">
-                                        <input id="" type="text" class="validate" />
+                                        <input id="number" type="text" class="validate" name="number"/>
                                         <label for="password" class="" style="font-size:13px;">伤亡人数</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="password" type="text" class="validate" />
+                                        <input id="detailed" type="text" class="validate" name="detailed"/>
                                         <label for="password" class="" style="font-size:13px;">详情描述</label>
                                     </div>
                                 </div>
@@ -268,11 +270,11 @@
 								<div class="row">
                                    
                                     <div class="input-field col s6">
-                                        <input id="password" type="text" class="validate" />
+                                        <input id="name" type="text" class="validate" name="name"/>
                                         <label for="password" class="" style="font-size:13px;">报警人</label>
                                     </div>
                                     <div class="input-field col s6">
-                                        <input id="password" type="text" class="validate" />
+                                        <input id="phoneNumber" type="text" class="validate" name="phoneNumber"/>
                                         <label for="password" class="" style="font-size:13px;">报警人电话</label>
                                     </div>
                                 </div>
@@ -281,11 +283,14 @@
                             </div>
 								
 						<div class="card-action">
-							<a th:href="@{#}" class="waves-effect waves-light btn right">添加续报</a>
+							<input  type="submit" class="waves-effect waves-light btn right" value="添加续报"/>
                         </div>
                       </div>  
                     </div>		
                   </div>
+			    
+			   </form>
+						
 
 
 					
@@ -325,7 +330,7 @@
 	<script th:src="@{static/assets/js/Lightweight-Chart/jquery.chart.js}"></script>
 	
     <!-- Custom Js -->
-    <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
+    <script th:src="@{static/assets/js/custom.js}"></script> 
  
 
 </body>
