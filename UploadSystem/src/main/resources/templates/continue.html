@@ -1,0 +1,333 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>事件续报</title>
+	
+	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet" />
+	<link rel="stylesheet" th:href="@{static/assets/materialize/css/materialize.min.css}" media="screen,projection" />
+    <!-- Bootstrap Styles-->
+    <link th:href="@{static/assets/css/bootstrap.css}" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link th:href="@{static/assets/css/font-awesome.css}" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link th:href="@{static/assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link th:href="@{static/assets/css/custom-styles.css}" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link th:href='@{http://fonts.googleapis.com/css?family=Open+Sans}' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" th:href="@{static/assets/js/Lightweight-Chart/cssCharts.css}" /> 
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle waves-effect waves-dark" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand waves-effect waves-dark" th:href="@{#}"><i class="large material-icons">insert_chart</i> <strong>upload-system</strong></a>
+				
+		<div id="sideNav" th:href="@{#}"><i class="material-icons dp48">toc</i></div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right"> 
+				<li><a class="dropdown-button waves-effect waves-dark" th:href="@{#!}" data-activates="dropdown2"><i class="fa fa-bell fa-fw"></i> <i class="material-icons right">arrow_drop_down</i></a></li>
+				<li><a class="dropdown-button waves-effect waves-dark" th:href="@{#!}" data-activates="dropdown1"><i class="fa fa-user fa-fw"></i> <b>张三</b> <i class="material-icons right">arrow_drop_down</i></a></li>
+            </ul>
+        </nav>
+		<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+	<li><a th:href="@{#}"><i class="fa fa-user fa-fw"></i> 个人信息</a>
+	</li> 
+	<li><a th:href="@{#}"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+	</li>
+</ul>
+<ul id="dropdown2" class="dropdown-content w250">
+						
+	<li>
+		<a th:href="@{#}">
+			<div>
+				<i class="fa fa-envelope fa-fw"></i> 未处理信息
+				<span class="pull-right text-muted small">10</span>
+			</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+                       
+</ul>
+<ul id="dropdown3" class="dropdown-content dropdown-tasks w250">
+	
+</ul>   
+<ul id="dropdown4" class="dropdown-content dropdown-tasks w250">
+  <li>
+		<a th:href="@{#}">
+			<div>
+				<strong>张三</strong>
+				<span class="pull-right text-muted">
+					<em>Today</em>
+				</span>
+			</div>
+			<div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
+		</a>
+	</li>
+	<li class="divider"></li>
+                       
+</ul>  
+	   <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    
+                    <li>
+                        <a th:href="@{ui-elements.html}" class="active-menu  waves-effect waves-dark"><i class="fa fa-desktop"></i> 主界面</a>
+                    </li>
+					<li>
+                        <a th:href="@{chart.html}" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 事件初报</a>
+                    </li>
+                                 
+                    <li>
+                        <a th:href="@{table.html}" class="waves-effect waves-dark"><i class="fa fa-table"></i> 值班安排</a>
+                    </li>
+                    <li>
+                        <a th:href="@{form.html}" class="waves-effect waves-dark"><i class="fa fa-edit"></i> 交班安排 </a>
+                    </li>
+					<li>
+                        <a class="waves-effect waves-dark" th:href="@{index.html}"><i class="fa fa-dashboard"></i> 统计分析</a>
+                    </li>
+					<li>
+                        <a class="waves-effect waves-dark" th:href="@{#}"><i class="fa fa-edit"></i> 用户管理</a>
+                    </li>
+                         
+                </ul>
+
+            </div>
+
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+		<div id="page-wrapper">
+			<div class="header"> 
+				<h1 class="page-header">
+					事件续报
+				</h1>
+					<!-- 小导航栏  -->
+					<ol class="breadcrumb">
+					  <li><a th:href="@{#}">主界面</a></li>
+					  <li><a th:href="@{#a}">事件信息</a></li>
+					  <li><a th:href="@{#b}">续报日志</a></li>
+					  <li><a th:href="@{#c}">添加续报</a></li>
+					  
+					</ol> 									
+			</div>
+			
+			<div class="col-md-12">
+				<div class="card"> 
+
+		<!--初报信息展示-->
+		
+		<div class="card">
+                   <div class="card-action">
+                       <strong class="left" id="a">事件信息</strong>
+		
+                   </div>
+                 <div class="card-content">
+                            
+                                事件名称：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+		   <span style="width:200px;display:inline-block;"></span>
+			报警人：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
+								
+			事件类型：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+			<span style="width:200px;display:inline-block;"></span>
+				报警人电话：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
+								
+								事件等级：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+								<span style="width:200px;display:inline-block;"></span>
+								详细地址：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label><br/><br/>
+								
+								发生地区：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+								<span style="width:200px;display:inline-block;"></span>
+								上报人员：<label for="password" class="" style="width:200px;font-size:13px;">详情描述</label>
+                         
+                   </div>
+            </div>	
+							
+							
+							
+							<!--续报日志-->
+				<div class="card">
+                        <div class="card-action" id="b">
+                            <strong class="left">续报日志</strong>
+							
+                        </div>
+                        <div class="card-content">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th class="center">事件等级</th>
+                                            <th class="center">受伤人数</th>
+                                            <th class="center">续报日期</th>
+                                            <th class="center">报警人</th>
+                                            <th class="center">报警人电话</th>
+                                            <th class="center">续报人</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="center">一级事件</td>
+                                            <td class="center">三人</td>
+                                            <td class="center">2019-04-16</td>
+                                            <th class="center">匿名用户</th>
+                                            <th class="center">13555555549</th>
+                                            <td class="center">刘</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">一级事件</td>
+                                            <td class="center">三人</td>
+                                            <td class="center">2019-04-16</td>
+                                            <th class="center">匿名用户</th>
+                                            <th class="center">13555555549</th>
+                                            <td class="center">刘</td>
+                                        </tr>
+                                       <tr>
+                                            <td class="center">一级事件</td>
+                                            <td class="center">三人</td>
+                                            <td class="center">2019-04-16</td>
+                                            <th class="center">匿名用户</th>
+                                            <th class="center">13555555549</th>
+                                            <td class="center">刘</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="center">一级事件</td>
+                                            <td class="center">三人</td>
+                                            <td class="center">2019-04-16</td>
+                                            <th class="center">匿名用户</th>
+                                            <th class="center">13555555549</th>
+                                            <td class="center">刘</td>
+                                        </tr>
+                                         <tr>
+                                            <td class="center">一级事件</td>
+                                            <td class="center">三人</td>
+                                            <td class="center">2019-04-16</td>
+                                            <th class="center">匿名用户</th>
+                                            <th class="center">13555555549</th>
+                                            <td class="center">刘</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div> 
+		
+                        </div>
+                    </div>	
+<!--添加续报-->
+							<div class="card">
+                        <div class="card-action" id="c">
+                            <strong class="left">添加续报</strong>
+							
+                        </div>
+                        <div class="card-content">
+                            <div class="table-responsive">
+                           <div class="card-content">
+                                
+                                   
+                                    <div class="input-field col s9">
+                                       
+										
+							  <button data-toggle="dropdown" class="btn btn-danger dropdown-toggle">事件等级 <span class="caret"></span></button>
+							  <ul class="dropdown-menu">
+								<li><a th:href="@{#}">一级事件</a></li>
+								<li><a th:href="@{#}">二级事件</a></li>
+								<li><a th:href="@{#}">三级事件</a></li>
+								<li class="divider"></li>
+								
+							  </ul><br/>
+                                    </div>
+
+                                
+                                <div class="row">
+                                   
+                                    <div class="input-field col s6">
+                                        <input id="" type="text" class="validate" />
+                                        <label for="password" class="" style="font-size:13px;">伤亡人数</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="password" type="text" class="validate" />
+                                        <label for="password" class="" style="font-size:13px;">详情描述</label>
+                                    </div>
+                                </div>
+								
+								<div class="row">
+                                   
+                                    <div class="input-field col s6">
+                                        <input id="password" type="text" class="validate" />
+                                        <label for="password" class="" style="font-size:13px;">报警人</label>
+                                    </div>
+                                    <div class="input-field col s6">
+                                        <input id="password" type="text" class="validate" />
+                                        <label for="password" class="" style="font-size:13px;">报警人电话</label>
+                                    </div>
+                                </div>
+                              
+
+                            </div>
+								
+						<div class="card-action">
+							<a th:href="@{#}" class="waves-effect waves-light btn right">添加续报</a>
+                        </div>
+                      </div>  
+                    </div>		
+                  </div>
+
+
+					
+				  
+				
+			  </div>
+            </div>
+			
+			<!-- 页脚  -->
+			<footer>
+				<p>Copyright &copy; 2016.Company name All rights reserved.<a target="_blank" th:href="@{http://sc.chinaz.com/moban/}">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			</footer>
+        </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+    <script th:src="@{static/assets/js/jquery-1.10.2.js}"></script>
+	
+	<!-- Bootstrap Js -->
+    <script th:src="@{static/assets/js/bootstrap.min.js}"></script>
+	
+	<script th:src="@{static/assets/materialize/js/materialize.min.js}"></script>
+	
+    <!-- Metis Menu Js -->
+    <script th:src="@{static/assets/js/jquery.metisMenu.js}"></script>
+    <!-- Morris Chart Js -->
+    <script th:src="@{static/assets/js/morris/raphael-2.1.0.min.js}"></script>
+    <script th:src="@{static/assets/js/morris/morris.js}"></script>
+	
+	
+	<script th:src="@{static/assets/js/easypiechart.js}"></script>
+	<script th:src="@{static/assets/js/easypiechart-data.js}"></script>
+	
+	<script th:src="@{static/assets/js/Lightweight-Chart/jquery.chart.js}"></script>
+	
+    <!-- Custom Js -->
+    <script th:src="@{static/assets/js/custom-scripts.js}"></script> 
+ 
+
+</body>
+
+</html>
