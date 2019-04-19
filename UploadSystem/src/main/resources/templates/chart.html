@@ -1,24 +1,24 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
 	
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+	<link th:href="@{https://fonts.googleapis.com/icon?family=Material+Icons}" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{assets/materialize/css/materialize.min.css}" media="screen,projection" />
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link th:href="@{assets/css/bootstrap.css}" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link th:href="@{assets/css/font-awesome.css}" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link th:href="@{assets/js/morris/morris-0.4.3.min.css}" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link th:href="@{assets/css/custom-styles.css}" rel="stylesheet" />
     <!-- Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
+    <link th:href='@{http://fonts.googleapis.com/css?family=Open+Sans}' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" th:href="@{assets/js/Lightweight-Chart/cssCharts.css}"> 
 </head>
 <body>
     <div id="wrapper">
@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>TRACK</strong></a>
+                <a class="navbar-brand waves-effect waves-dark" href="index.html"><i class="large material-icons">insert_chart</i> <strong>上报系统</strong></a>
 				
 		<div id="sideNav" class="waves-effect waves-dark" href=""><i class="material-icons dp48">toc</i></div>
             </div>
@@ -215,30 +215,29 @@
                             </a>
                         </li>
 </ul>  
-	   <!--/. NAV TOP  -->
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="index.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="home.html" class="waves-effect waves-dark"><i class="fa fa-dashboard"></i> 主页面</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="first_report.html" class="waves-effect waves-dark"><i class="fa fa-desktop"></i> 事件初报</a>
                     </li>
 					<li>
-                        <a href="chart.html" class="active-menu waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="continue.html" class="waves-effect waves-dark"><i class="fa fa-bar-chart-o"></i> 事件续报</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="journal.html" class="waves-effect waves-dark"><i class="fa fa-qrcode"></i> 交接班</a>
                     </li>
                     
                     <li>
-                        <a href="table.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="chart.html" class="waves-effect waves-dark"><i class="fa fa-table"></i> 统计分析</a>
                     </li>
                     <li>
-                        <a href="form.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i> Forms </a>
+                        <a href="empty.html" class="waves-effect waves-dark"><i class="fa fa-edit"></i> 空页面 </a>
                     </li>
 
 
@@ -352,27 +351,27 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script th:src="@{assets/js/jquery-1.10.2.js}"></script>
 	
 	<!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script th:src="@{assets/js/bootstrap.min.js}"></script>
 	
-	<script src="assets/materialize/js/materialize.min.js"></script>
+	<script th:src="@{assets/materialize/js/materialize.min.js}"></script>
 	
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script th:src="@{assets/js/jquery.metisMenu.js}"></script>
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script th:src="@{assets/js/morris/raphael-2.1.0.min.js}"></script>
+    <script th:src="@{assets/js/morris/morris.js}"></script>
 	
 	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
+	<script th:src="@{assets/js/easypiechart.js}"></script>
+	<script th:src="@{assets/js/easypiechart-data.js}"></script>
 	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script th:src="@{assets/js/Lightweight-Chart/jquery.chart.js}"></script>
 	
     <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script> 
+    <script th:src="@{assets/js/custom-scripts.js}"></script> 
  
 
 </body>
